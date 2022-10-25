@@ -6,7 +6,7 @@ const Profile = () => {
 
     return(
         <Fragment>
-            {loading ? <Loader /> : (
+            {loading ? <any /> : (
                 <Fragment>
                     <metadata title={'Mina Sidor'} />
 

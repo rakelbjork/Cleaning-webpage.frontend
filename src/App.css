@@ -1,0 +1,43 @@
+body {
+  background-color: rgb(93, 93, 93);
+}
+#appointmentform {
+  width: 14em;
+}
+.MuiInputBase-root.MuiInput-root.MuiInput-underline.MuiInputBase-formControl.MuiInput-formControl {
+  margin-bottom: 1em;
+}
+@media only screen and (orientation: portrait) {
+  #titlebar {
+    flex-direction: column;
+  }
+  #titlebar div {
+    margin-bottom: 0.5em;
+  }
+  #titlebar button {
+    margin-bottom: 0.5em;
+  }
+  .deletebutton .MuiButton-startIcon {
+    margin: 0;
+  }
+  .buttontext {
+    display: none;
+  }
+  .MuiListItemIcon-root.MuiListItemIcon-alignItemsFlexStart {
+    min-width: 3em;
+  }
+  .MuiButton-root.deletebutton,
+  .MuiButton-root.editbutton {
+    margin-right: 0em;
+    right: 1em;
+  }
+  .MuiButton-label .MuiButton-startIcon {
+    margin-right: 0em;
+  }
+  .MuiListItem-root.MuiListItem-gutters {
+    padding-left: 0em;
+  }
+  .MuiListItemText-root.MuiListItemText-multiline {
+    max-width: 20em;
+  }
+}

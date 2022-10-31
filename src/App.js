@@ -1,11 +1,25 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
-const App = () => {
+function App () {
+
+  useEffect(() => {
+    StorageEvent.dispatch(loadUser())
+  }, [])
   return (
-    <div>
-      Städafint AB
+    <Router>
+    <div className="App">
+      <Header />
+      <div className="container container-fluid">
+        <Route path="/" component={Home} exact />
+        <Route path="keyborad" component={Home} />
+
+        <Route path="/login" component={Login} />
+
+      </div>
+      <Footer />
     </div>
-  )
+    </Router>
+  );
 }
 
 export default App;

@@ -2,7 +2,7 @@ import { Fragment } from "react"
 
 const Profile = () => {
 
-    const { client, loading } = userSelector(state => state.auth)
+    const { user, loading } = userSelector(state => state.auth)
 
     return(
         <Fragment>
@@ -17,7 +17,7 @@ const Profile = () => {
                                 <img className="rounded-circle img-fluid" src={user.avatar.url} 
                                 alt={user.name} />
                             </figure>
-                            <Link to="/" id="edit_profile" class="btn btn-primary btn-block my-4">
+                            <Link to="/me/update" id="edit_profile" class="btn btn-primary btn-block my-4">
                                 Redigera Profil
                             </Link>
 
@@ -37,13 +37,20 @@ const Profile = () => {
                             <h4>Telefonummer: </h4>
                             <p>{user.phonenumber}</p>
 
-                            <a href="#" className="btn btn-danger btn-block mt-5">
+                            
+                            {user.role !== 'admin' && (!
+                            <Link to="/orders/me" className="btn btn-danger btn-block mt-5">
                                 Mina ordrar
-                            </a>
+                            </Link>
+                                
+                                
+                            )}
 
-                            <a href="#" className="btn btn-primary btn-block mt-3">
+                            
+
+                            <Link to="/password/update" className="btn btn-primary btn-block mt-3">
                                 Byt Lösenord
-                            </a>
+                            </Link>
                         </div>
                     </div> 
                 </Fragment>

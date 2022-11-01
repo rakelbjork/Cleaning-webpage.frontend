@@ -1,4 +1,9 @@
 import { Fragment } from "react"
+import { Link } from 'react-router-dom'
+import { userSelector } from 'react-redux'
+
+
+
 
 const Profile = () => {
 
@@ -45,8 +50,6 @@ const Profile = () => {
                                 
                                 
                             )}
-
-                            
 
                             <Link to="/password/update" className="btn btn-primary btn-block mt-3">
                                 Byt Lösenord

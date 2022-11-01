@@ -1,24 +1,12 @@
-import React, { useEffect } from 'react'
+import React from "react";
+import "./App.css";
+import Container from "./containers/Container";
 
-function App () {
-
-  useEffect(() => {
-    StorageEvent.dispatch(loadUser())
-  }, [])
+function App() {
   return (
-    <Router>
     <div className="App">
-      <Header />
-      <div className="container container-fluid">
-        <Route path="/" component={Home} exact />
-        <Route path="keyborad" component={Home} />
-
-        <Route path="/login" component={Login} />
-
-      </div>
-      <Footer />
+      <Container id="container" />
     </div>
-    </Router>
   );
 }
 

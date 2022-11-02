@@ -2,7 +2,7 @@ import { Fragment } from "react"
 
 const Profile = () => {
 
-    const { client, loading } = clientSelector(state => state.auth)
+    const { client, loading } = userSelector(state => state.auth)
 
     return(
         <Fragment>
@@ -11,21 +11,31 @@ const Profile = () => {
                     <metadata title={'Mina Sidor'} />
 
                     <h2 className="mt-4 ml-4">Mina Sidor</h2>
-                    <div className="row justify-content-around mt-4 client-info">
+                    <div className="row justify-content-around mt-4 user-info">
                         <div className="col-4 col-md-3">
                             <figure className='avatar avatar-profile'>
-                                <img className="rounded-circle img-fluid" src='' alt='' />
+                                <img className="rounded-circle img-fluid" src={user.avatar.url} 
+                                alt={user.name} />
                             </figure>
-                            <a href="#" id="edit_profile" class="btn btn-primary btn-block my-4">
+                            <Link to="/" id="edit_profile" class="btn btn-primary btn-block my-4">
                                 Redigera Profil
-                            </a>
+                            </Link>
+
+                            <Link to="/phonenumber/update" id="edit_number" className="btn btn-primary btn-block mt-2">
+                                Redigera Telefonnummer
+                            </Link>
+
+
                         </div>
                         <div className="col-4 col-md-5">
-                            <h4>Fullständiga namn</h4>
-                            <p>Testar Testsson</p>
+                            <h4>Fullständiga namn: </h4>
+                            <p>{user.name}</p>
                             
-                            <h4>Epost adress</h4>
-                            <p>TestTestsson@gmail.com</p>
+                            <h4>Email adress: </h4>
+                            <p>{user.email}</p>
+
+                            <h4>Telefonummer: </h4>
+                            <p>{user.phonenumber}</p>
 
                             <a href="#" className="btn btn-danger btn-block mt-5">
                                 Mina ordrar

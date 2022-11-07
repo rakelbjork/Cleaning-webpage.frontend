@@ -1,12 +1,42 @@
-import React from "react";
-import "./App.css";
-import Container from "./containers/Container";
+import React from 'react'
+import Login from './HomePage/Login/Login';
+import Home from './components/Home';
+import Register from './HomePage/Login/Register';
+import Unauthorized from './components/Unauthorized';
+import LinkPage from './components/LinkPage';
+import Admin from './components/Admin.js';
+import RequireAuth from './components/RequireAuth';
+import { Routes, Route } from 'react-router-dom';
+
+
+const ROLES = {
+  'User': 2001,
+  'Admin': 5150
+}
 
 function App() {
+
   return (
-    <div className="App">
-      <Container id="container" />
-    </div>
+      <Routes>
+        <Route path='/' element={<Layout />}>
+
+        <Route path='login' element={<Login />} />
+        <Route path='register' element={<Register />} />
+        <Route path="linkpage" element={<LinkPage />} />
+        <Route path="unauthorized" element={<Unauthorized />} />
+
+        <Route element={<RequireAuth allowedRoles={[ROLES.User]} />}>
+          <Route path="/" element={<Home />} />
+      </Route>
+
+      <Route element={<RequireAuth allowedRoles={[ROLES.Admin]} />}>
+          <Route path="admin" element={<Admin />} />
+        </Route>
+
+      <Route path="*" element={<Missing />} />
+
+      </Route>
+      </Routes>
   );
 }
 

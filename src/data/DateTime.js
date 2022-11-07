@@ -1,4 +1,4 @@
-import { pad } from "../utils/MathUtils";
+/*import { pad } from "../utils/MathUtils";
 
 export default class DateTime {
   getCurrentDateTime() {
@@ -18,3 +18,4 @@ export default class DateTime {
     return currentdatetime;
   }
 }
+*/

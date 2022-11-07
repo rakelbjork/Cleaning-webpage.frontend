@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+/*import React, { Component } from "react";
 import DateTime from "../data/DateTime";
 import EventForm from "../components/EventForm";
 import EventList from "../components/EventList";
@@ -114,3 +114,4 @@ class Container extends Component {
 }
 
 export default Container;
+*/

@@ -17,6 +17,7 @@ const ROLES = {
 function App() {
 
   return (
+    
       <Routes>
         <Route path='/' element={<Layout />}>
 
@@ -26,7 +27,7 @@ function App() {
         <Route path="unauthorized" element={<Unauthorized />} />
 
         <Route element={<RequireAuth allowedRoles={[ROLES.User]} />}>
-          <Route path="/" element={<Home />} />
+          <Route path="home" element={<Home />} />
       </Route>
 
       <Route element={<RequireAuth allowedRoles={[ROLES.Admin]} />}>

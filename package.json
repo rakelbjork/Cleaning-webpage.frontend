@@ -25,6 +25,9 @@
   "eslintConfig": {
     "extends": "plugin:react/jsx-runtime"
   },
+  "rules": {
+     "react/react-in-jsx-scope": "off"
+ },
   "browserslist": {
     "production": [
       ">0.2%",

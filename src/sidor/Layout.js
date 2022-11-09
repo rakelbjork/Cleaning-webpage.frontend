@@ -20,7 +20,7 @@ const Layout = () => {
           <li>
             <Link to="/Kontakt">Kontakta oss</Link>
           </li>
-        </ul>
+                  </ul>
       </nav>
 
       <Outlet />

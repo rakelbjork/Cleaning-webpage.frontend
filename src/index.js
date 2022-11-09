@@ -10,7 +10,8 @@ ReactDOM.render(
         <BrowserRouter>
      <AuthProvider>
         <Routes>
-            <Route path= "/*" element={ <App />} />
+            <Route path= "/" element={ <Homepage />} />
+            
         <App />
         </Routes>
      </AuthProvider>

@@ -1,11 +1,11 @@
 import React from 'react'
-import Login from './components/Login';
-import Home from './components/Home';
-import Register from './components/Register';
-import Unauthorized from './components/Unauthorized';
-import LinkPage from './components/LinkPage';
-import Admin from './components/Admin.js';
-import RequireAuth from './components/RequireAuth';
+import Login from './components/login/Login';
+import HomePage from './components/pages/HomePage';
+import Register from './components/register/RegisterForm';
+import Unauthorized from './components/login/Unauthorized';
+import LinkPage from './components/pages/LinkPage';
+import Admin from './components/admin/Admin';
+import RequireAuth from './components/login/RequireAuth';
 import { Routes, Route } from 'react-router-dom';
 
 
@@ -27,7 +27,7 @@ function App() {
         <Route path="unauthorized" element={<Unauthorized />} />
 
         <Route element={<RequireAuth allowedRoles={[ROLES.User]} />}>
-          <Route path="home" element={<Home />} />
+          <Route path="home" element={<HomePage />} />
       </Route>
 
       <Route element={<RequireAuth allowedRoles={[ROLES.Admin]} />}>

@@ -1,9 +1,14 @@
+import React, { useEffect } from 'react';
+import "../pages/homePage.css";
+
+import logo from "../assets/logoStadaFint.png";
 import { useNavigate, Link } from "react-router-dom";
 import { useContext } from "react";
 import AuthContext from "../login/AuthProvider";
+import RegisterForm from "../register/RegisterForm"
 
-const Home = () => {
-    const { setAuth } = useContext(AuthContext);
+const HomePage = (props) => {
+    const { loggedInUser, setLoggedInUser } = useContext(AuthContext);
     const navigate = useNavigate();
 
     const logout = async () => {

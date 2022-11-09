@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import App from './App';
 import './index.css';
 import { AuthProvider } from './components/context/AuthProvider';
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
@@ -8,6 +9,7 @@ import Register from './components/register/RegisterForm';
 
 ReactDOM.render(
     <React.StrictMode>
+        <App />
         <BrowserRouter>
      <AuthProvider>
      <Routes>

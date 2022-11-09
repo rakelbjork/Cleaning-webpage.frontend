@@ -2,33 +2,37 @@ import React, { useEffect } from 'react';
 import "../pages/homePage.css";
 
 import logo from "../assets/logoStadaFint.png";
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate, Link, Navigate } from "react-router-dom";
 import { useContext } from "react";
 import AuthContext from "../login/AuthProvider";
 import RegisterForm from "../register/RegisterForm"
 
 const HomePage = (props) => {
-    const { loggedInUser, setLoggedInUser } = useContext(AuthContext);
+    const { loggedInUser, setLoggedInUser } = props;
+    
+    useEffect(() => {
+        let storageUser = localStorage.getItem("user");
+        let savedPerson = JSON.parse(storageUser);
+        setLoggedInUser(savedPerson);
+    }, [])
     const navigate = useNavigate();
 
-    const logout = async () => {
-        setAuth({});
-        navigate('/linkpage');
-    }
-
     return (
-        <section>
-            <h1>Home</h1>
-            <br />
-            <p>You are logged in!</p>
-            <br />
-            <Link to="/admin">Go to the Admin page</Link>
-            <br />
-            <Link to="/linkpage">Go to the link page</Link>
-            <div className="flexGrow">
-                <button onClick={logout}>Sign Out</button>
-            </div>
-        </section>
+        <div>
+         {loggedInUser ? (
+            <Navigate to="/mypage"></Navigate>
+         ) : (
+            <>
+            <header className="header-homepage">
+                <img src={logo} className="logo" alt="cleaning-logo" />
+
+                <li><a href="#our-services">VÅRA PAKET</a></li>
+                <li><a href="/">HÄR FINNS VI</a></li>
+                <li><a href="/">VI PÅ STÄDAFINT AB</a></li>
+            </header>
+            </>
+         )}
+        </div>
     )
 }
 

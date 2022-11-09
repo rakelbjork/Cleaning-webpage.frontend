@@ -9,6 +9,8 @@ const Profile = () => {
 
     const { user, loading } = userSelector(state => state.auth)
 
+    
+
     return(
         <Fragment>
             {loading ? <any /> : (

@@ -1,101 +1,73 @@
-import { useRef, useState, useEffect } from 'react';
-import useAuth from './useAuth';
-import { Link, useNavigate, useLocation } from 'react-router-dom';
+import { Button, Box } from "@mui/material";
+import React, { useState } from "react";
+import RequireAuth from "./RequireAuth";
+import "../login/Login.css"
 
-import axios from '../api/axios'
-const LOGIN_URL = '/auth';
+const Login = (props) => {
+    const [values, setValues] = useState({
+        username: "",
+        password: "",
+    });
 
-const Login = () => {
-    const { setAuth } = useAuth();
+    const { setLoggedInUser } = props;
 
-    const navigate = useNavigate();
-    const location = useLocation();
-    const from = location.state?.from?.pathname || "/";
+    const handleLogin = async (event) => {
+        event.preventDefault();
 
-    const userRef = useRef();
-    const errRef = useRef();
+        let response = await fetch('http://localhost:8080/api/auth/login`, {
+            method: 'POST',
 
-    const [user, setUser] = useState('');
-    const [pwd, setPwd] = useState('');
-    const [errMsg, setErrMsg] = useState('');
+            body: JSON.stringify({
+                username: values.username,
+                password: values.password,
+            }),
+            headers: {
+                'Content-Type': 'application/json'
+            },
+        });
+        
+        let token = await response.text();
 
-    useEffect(() => {
-        userRef.current.focus();
-    }, [])
+        response = await fetch(`http://localhost:8080/api/auth/whoami?token=${token}`)
 
-    useEffect(() => {
-        setErrMsg('');
-    }, [user, pwd])
+        let user = await response.json();
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-
-        try {
-            const response = await axios.post(LOGIN_URL,
-                JSON.stringify({ user, pwd }),
-                {
-                    headers: { 'Content-Type': 'application/json' },
-                    withCredentials: true
-                }
-            );
-            console.log(JSON.stringify(response?.data));
-    
-            const accessToken = response?.data?.accessToken;
-            const roles = response?.data?.roles;
-            setAuth({ user, pwd, roles, accessToken });
-            setUser('');
-            setPwd('');
-            navigate(from, { replace: true });
-        } catch (err) {
-            if (!err?.response) {
-                setErrMsg('No Server Response');
-            } else if (err.response?.status === 400) {
-                setErrMsg('Missing Username or Password');
-            } else if (err.response?.status === 401) {
-                setErrMsg('Unauthorized');
-            } else {
-                setErrMsg('Login Failed');
-            }
-            errRef.current.focus();
+        if (token ==user.token) {
+        setLoggedInUser(user);
+        localStorage.setItem("user", JSON.stringify(user));
         }
     }
 
-    return (
+    const onChange = (e) => {
+        setValues({ ...values, [e.target.name]: e.target.name});
+    };
 
-        <section>
-            <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>
-            <h1>Sign In</h1>
-            <form onSubmit={handleSubmit}>
-                <label htmlFor="username">Username:</label>
+    return (
+        <div>
+
+            <h2>Login</h2>
+            <form>
+                <p>Username</p>
                 <input
                     type="text"
-                    id="username"
-                    ref={userRef}
-                    autoComplete="off"
-                    onChange={(e) => setUser(e.target.value)}
-                    value={user}
-                    required
+                    placeholder="Username..."
+                    onChange={(e) => setUsername(e.target.value)}
+                    value={username}
                 />
 
-                <label htmlFor="password">Password:</label>
+                <p>Password</p>
                 <input
                     type="password"
-                    id="password"
-                    onChange={(e) => setPwd(e.target.value)}
-                    value={pwd}
-                    required
+                    placeholder="Password..."
+                    onChange={(e) => setPassword(e.target.value)}
+                    value={password}
                 />
-                <button>Sign In</button>
+                <br /><br />
+                <button onClick={handleLogin}>Login</button>
+
             </form>
-            <p>
-                Need an Account?<br />
-                <span className="line">
-                    <Link to="/register">Sign Up</Link>
-                </span>
-            </p>
-        </section>
 
-    )
-}
+        </div>
+    );
 
-export default Login
+export default Login;

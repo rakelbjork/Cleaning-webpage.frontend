@@ -6,14 +6,11 @@ Kör genom att öppna mappen i VS Code och i terminalen skriva "npm install" och
 
 
 
-(
-
 Om det kommer uppfelmeddelande så installera även dessa dependencies från terminalen:
 
 npm i react-router-dom@latest
-npm install react-bootstrap bootstrap@latest
 
-)
+npm install react-bootstrap bootstrap@latest
 
 
 

@@ -1,6 +1,4 @@
-import { Button, Box } from "@mui/material";
 import React, { useState } from "react";
-import RequireAuth from "./RequireAuth";
 import "../login/Login.css"
 
 const Login = (props) => {
@@ -14,33 +12,23 @@ const Login = (props) => {
     const handleLogin = async (event) => {
         event.preventDefault();
 
-        let response = await fetch('http://localhost:8080/api/auth/login`, {
+        let response = await fetch(`http://localhost:8080/api/auth/login/api/auth/login`, {
             method: 'POST',
-
             body: JSON.stringify({
-                username: values.username,
-                password: values.password,
+                username: username,
+                password: password
             }),
             headers: {
                 'Content-Type': 'application/json'
-            },
-        });
-        
+            }
+        })
         let token = await response.text();
 
-        response = await fetch(`http://localhost:8080/api/auth/whoami?token=${token}`)
-
+        response = await fetch(`http://localhost:8080/api/auth/login/api/auth/whoami?token=${token}`)
         let user = await response.json();
-
-        if (token ==user.token) {
         setLoggedInUser(user);
-        localStorage.setItem("user", JSON.stringify(user));
-        }
     }
 
-    const onChange = (e) => {
-        setValues({ ...values, [e.target.name]: e.target.name});
-    };
 
     return (
         <div>
@@ -69,5 +57,7 @@ const Login = (props) => {
 
         </div>
     );
+
+}
 
 export default Login;

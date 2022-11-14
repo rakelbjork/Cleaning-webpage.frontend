@@ -1,7 +1,6 @@
 import { useRef, useState, useEffect } from "react";
 import { faCheck, faTimes, faInfoCircle } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import axios from '../api/axios'
 import { Link } from "react-router-dom";
 
 const Register = (props) => {
@@ -205,4 +204,4 @@ const Register = (props) => {
     )
 }
 
-export default Register
+export default Register;

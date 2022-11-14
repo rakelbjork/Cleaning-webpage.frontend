@@ -4,7 +4,6 @@ import "../pages/homePage.css";
 import logo from "../assets/logoStadaFint.png";
 import { useNavigate, Link, Navigate } from "react-router-dom";
 import { useContext } from "react";
-import AuthContext from "../login/AuthProvider";
 import RegisterForm from "../register/RegisterForm"
 
 const HomePage = (props) => {
@@ -36,4 +35,4 @@ const HomePage = (props) => {
     )
 }
 
-export default Home
+export default Home;

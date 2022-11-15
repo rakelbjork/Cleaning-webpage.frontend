@@ -6,7 +6,7 @@ import Unauthorized from './components/login/Unauthorized';
 import LinkPage from './components/pages/LinkPage';
 import Admin from './components/admin/Admin';
 import RequireAuth from './components/login/RequireAuth';
-import { Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Routes, Route } from 'react-router-dom';
 
 
 const ROLES = {
@@ -17,27 +17,30 @@ const ROLES = {
 function App() {
 
   return (
-    
+    <div className='App'>
       <Routes>
-        <Route path='/' element={<HomePage />}>
+        <Navbar />
+        <Route path='/' component={<HomePage />}>
 
-        <Route path='login' element={<Login />} />
-        <Route path='register' element={<Register />} />
-        <Route path="linkpage" element={<LinkPage />} />
-        <Route path="unauthorized" element={<Unauthorized />} />
+        <Route path='Login' component={<Login />} />
+        <Route path='Register' component={<Register />} />
+        <Route path="Linkpage" component={<LinkPage />} />
+        <Route path="Unauthorized" component={<Unauthorized />} />
 
         <Route element={<RequireAuth allowedRoles={[ROLES.User]} />}>
-          <Route path="homepage" element={<HomePage />} />
+          <Route path="Homepage" component={<HomePage />} />
       </Route>
 
       <Route element={<RequireAuth allowedRoles={[ROLES.Admin]} />}>
-          <Route path="admin" element={<Admin />} />
+          <Route path="Admin" component={<Admin />} />
         </Route>
 
-      <Route path="*" element={<Missing />} />
-
+      <Route path="*" component={<Missing />} />
       </Route>
+
+  
       </Routes>
+      </div>
   );
 }
 

@@ -6,7 +6,7 @@ import Unauthorized from './components/login/Unauthorized';
 import LinkPage from './components/pages/LinkPage';
 import Admin from './components/admin/Admin';
 import RequireAuth from './components/login/RequireAuth';
-import { BrowserRouter as Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 
 
 const ROLES = {

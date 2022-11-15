@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import {HiOutlineMenu} from 'react-icons/hi'
 import {HiOutlineChevronUp} from 'react-icons/hi'
-import './Navbar.css'
+import './navBar/Navbar.css';
 
 const Navbar = () => {
 
@@ -28,4 +28,4 @@ const Navbar = () => {
     )
 }
 
-export default Navbar
+export default Navbar;

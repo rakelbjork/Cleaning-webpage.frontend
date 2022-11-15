@@ -6,7 +6,8 @@ import Unauthorized from './components/login/Unauthorized';
 import LinkPage from './components/pages/LinkPage';
 import Admin from './components/admin/Admin';
 import RequireAuth from './components/login/RequireAuth';
-import { Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Navbar from '../src/components/frontPage/Navbar';
 
 
 const ROLES = {
@@ -18,9 +19,10 @@ function App() {
 
   return (
     <div className='App'>
+      <BrowserRouter>
+      <Navbar />
       <Routes>
-        <Navbar />
-        <Route path='/' component={<HomePage />}>
+        <Route path='/' component={<HomePage />} />
 
         <Route path='Login' component={<Login />} />
         <Route path='Register' component={<Register />} />
@@ -34,12 +36,9 @@ function App() {
       <Route element={<RequireAuth allowedRoles={[ROLES.Admin]} />}>
           <Route path="Admin" component={<Admin />} />
         </Route>
-
-      <Route path="*" component={<Missing />} />
-      </Route>
-
   
       </Routes>
+      </BrowserRouter>
       </div>
   );
 }

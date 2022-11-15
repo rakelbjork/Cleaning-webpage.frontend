@@ -8,10 +8,12 @@
     "@fortawesome/free-solid-svg-icons": "^5.15.4",
     "@fortawesome/react-fontawesome": "^0.2.0",
     "@material/tooltip": "^14.0.0",
+    "@mui/material": "^5.10.14",
     "font-awesome": "^4.7.0",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-axios": "^2.0.6",
+    "react-icons": "^4.6.0",
     "react-router-dom": "^6.4.3",
     "react-scripts": "^5.0.1",
     "react-service-worker": "^0.1.1"

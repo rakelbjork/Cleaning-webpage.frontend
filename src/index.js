@@ -1,37 +1,9 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
+import React from "react";
+import { ReactDOM } from "react";
 import './index.css';
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import Login from './components/login/Login';
-import Register from './components/register/RegisterForm';
+import App from './App';
+import registerServiceWorker from 'react-service-worker';
 
-ReactDOM.render(
-    <React.StrictMode>
-        <App />
-        <BrowserRouter>
-     <Routes>
-        <Route path='/' element={<HomePage />}>
+ReactDOM.render(<App/>, document.getElementById('root'));
 
-        <Route path='login' element={<Login />} />
-        <Route path='register' element={<Register />} />
-        <Route path="linkpage" element={<LinkPage />} />
-        <Route path="unauthorized" element={<Unauthorized />} />
-
-        <Route element={<RequireAuth allowedRoles={[ROLES.User]} />}>
-          <Route path="home" element={<HomePage />} />
-      </Route>
-
-      <Route element={<RequireAuth allowedRoles={[ROLES.Admin]} />}>
-          <Route path="admin" element={<Admin />} />
-        </Route>
-
-      <Route path="*" element={<Missing />} />
-
-      </Route>
-      </Routes>
-     </BrowserRouter>
-    </React.StrictMode>, 
-    document.getElementById('root')
-    
-    );
+ServiceWorker.unregister();

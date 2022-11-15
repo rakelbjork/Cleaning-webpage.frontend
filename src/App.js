@@ -7,7 +7,7 @@ import LinkPage from './components/pages/LinkPage';
 import Admin from './components/admin/Admin';
 import RequireAuth from './components/login/RequireAuth';
 import { Routes, Route } from 'react-router-dom';
-
+import Navbar from './components/frontPage/Navbar';
 
 const ROLES = {
   'User': 2001,

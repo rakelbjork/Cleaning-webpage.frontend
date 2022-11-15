@@ -19,7 +19,7 @@ const Navbar = () => {
                 <li><a href='#'>Om oss</a></li>
                 <li><a href='#'>Kontakt</a></li>
                 </ul>
-               <div className='mopp' onClick={handleClick}>
+               <div className='meny' onClick={handleClick}>
                 {click ? (<HiOutlineChevronUp className='icon' />) : <HiOutlineMenu className='icon'/>}
                 
                 </div>

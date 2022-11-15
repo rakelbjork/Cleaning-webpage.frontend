@@ -27,12 +27,12 @@
     padding: 1rem;
 }
 
-.mopp {
+.meny {
     display: none;
 }
 
 @media screen and (max-width: 940px) {
-    .mopp {
+    .meny {
         display: block;
     }
 

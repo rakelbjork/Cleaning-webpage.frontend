@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import {HiOutlineMenu} from 'react-icons/hi'
+import {FaMenuCircle} from 'react-icons/fa'
 import './Navbar.css'
 
 const Navbar = () => {
@@ -18,7 +19,9 @@ const Navbar = () => {
                 <li><a href='#'>Om oss</a></li>
                 <li><a href='#'>Kontakt</a></li>
                 </ul>
-               < div className='mopp' onClick={handleClick}>
+               <div className='mopp' onClick={handleClick}>
+                {click ? (<FaMenuCircle className='icon' />) : <HiOutlineMenu className='icon'/>}
+                
                 </div>
             </div>
         </div>

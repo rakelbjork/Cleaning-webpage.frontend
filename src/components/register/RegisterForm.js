@@ -1,14 +1,9 @@
 import { useRef, useState, useEffect } from "react";
 import { faCheck, faTimes, faInfoCircle } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import axios from '../api/axios'
 import { Link } from "react-router-dom";
 
-const USER_REGEX = /^[A-z][A-z0-9-_]{3,23}$/;
-const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
-const REGISTER_URL = '/register';
-
-const Register = () => {
+const Register = (props) => {
     const userRef = useRef();
     const errRef = useRef();
 
@@ -26,6 +21,35 @@ const Register = () => {
 
     const [errMsg, setErrMsg] = useState('');
     const [success, setSuccess] = useState(false);
+
+    const handleSave = async (event) => {
+
+        event.preventDefault()
+
+        await fetch(`http://localhost:8080/api/register`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                Authorization: `Bearer ${user.token}`
+            },
+            body: JSON.stringify({
+                firstname: firstname,
+                lastname: lastname,
+                email: email,
+                password: password
+            })
+        })
+
+        let response = await fetch(`http://localhost:8080/api/appuser/${user.long}/user`, {
+            headers: {
+                Authorization: `Bearer ${user.token}`
+            }
+        })
+        let appuser = await response.json()
+
+        setAppUser(appuser)
+    }
+
 
     useEffect(() => {
         userRef.current.focus();
@@ -180,4 +204,4 @@ const Register = () => {
     )
 }
 
-export default Register
+export default Register;

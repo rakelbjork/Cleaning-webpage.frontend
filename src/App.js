@@ -19,7 +19,7 @@ function App() {
   return (
     
       <Routes>
-        <Route path='/' element={<Layout />}>
+        <Route path='/' element={<HomePage />}>
 
         <Route path='login' element={<Login />} />
         <Route path='register' element={<Register />} />
@@ -27,7 +27,7 @@ function App() {
         <Route path="unauthorized" element={<Unauthorized />} />
 
         <Route element={<RequireAuth allowedRoles={[ROLES.User]} />}>
-          <Route path="home" element={<HomePage />} />
+          <Route path="homepage" element={<HomePage />} />
       </Route>
 
       <Route element={<RequireAuth allowedRoles={[ROLES.Admin]} />}>

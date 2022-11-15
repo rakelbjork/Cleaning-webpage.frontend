@@ -3,11 +3,11 @@ import { Link } from 'react-router-dom'
 import { userSelector } from 'react-redux'
 
 
-
-
 const Profile = () => {
 
     const { user, loading } = userSelector(state => state.auth)
+
+    
 
     return(
         <Fragment>
@@ -66,4 +66,4 @@ const Profile = () => {
     )
 }
 
-export default Profile
+export default Profile;

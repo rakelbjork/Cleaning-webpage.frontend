@@ -1,22 +1,9 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from "react";
+import { ReactDOM } from "react";
 import './index.css';
 import App from './App';
-import { AuthProvider } from './components/context/AuthProvider';
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import registerServiceWorker from 'react-service-worker';
 
-ReactDOM.render(
-    <React.StrictMode>
-        <BrowserRouter>
-     <AuthProvider>
-        <Routes>
-            <Route path= "/" element={ <Homepage />} />
-            
-        <App />
-        </Routes>
-     </AuthProvider>
-     </BrowserRouter>
-    </React.StrictMode>, 
-    document.getElementById('root')
-    
-    );
+ReactDOM.render(<App/>, document.getElementById('root'));
+
+ServiceWorker.unregister();

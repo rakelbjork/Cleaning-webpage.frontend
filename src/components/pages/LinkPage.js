@@ -16,4 +16,4 @@ const LinkPage = () => {
     )
 }
 
-export default LinkPage
+export default LinkPage;

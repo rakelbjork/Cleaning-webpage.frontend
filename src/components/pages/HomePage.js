@@ -4,17 +4,18 @@ import "../pages/homePage.css";
 import logo from "../assets/logoStadaFint.png";
 import { useNavigate, Link, Navigate } from "react-router-dom";
 import { useContext } from "react";
+import Login from '../login/Login';
 
 
 const HomePage = (props) => {
     const { loggedInUser, setLoggedInUser } = props;
     
-    useEffect(() => {
-        let storageUser = localStorage.getItem("user");
-        let savedPerson = JSON.parse(storageUser);
-        setLoggedInUser(savedPerson);
-    }, [])
-    const navigate = useNavigate();
+    // useEffect(() => {
+    //     let storageUser = localStorage.getItem("user");
+    //     let savedPerson = JSON.parse(storageUser);
+    //     setLoggedInUser(savedPerson);
+    // }, [])
+
 
     return (
         <div>
@@ -22,6 +23,7 @@ const HomePage = (props) => {
             <Navigate to="/mypage"></Navigate>
          ) : (
             <>
+        
             <header className="header-homepage">
                 <img src={logo} className="logo" alt="cleaning-logo" />
 
@@ -29,6 +31,10 @@ const HomePage = (props) => {
                 <li><a href="/">HÄR FINNS VI</a></li>
                 <li><a href="/">VI PÅ STÄDAFINT AB</a></li>
             </header>
+
+            <div>
+                 <Login setLoggedInUser={setLoggedInUser}></Login> 
+            </div>
             </>
          )}
         </div>

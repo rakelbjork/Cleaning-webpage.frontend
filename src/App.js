@@ -1,45 +1,38 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Login from './components/login/Login';
-import HomePage from './components/pages/HomePage';
+
 import Register from './components/register/RegisterForm';
 import Unauthorized from './components/login/Unauthorized';
 import LinkPage from './components/pages/LinkPage';
-import Admin from './components/admin/Admin';
-import RequireAuth from './components/login/RequireAuth';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navbar from '../src/components/frontPage/Navbar';
-
-
-const ROLES = {
-  'User': 2001,
-  'Admin': 5150
-}
+import './components/frontPage/navBar/Navbar.css';
+import HomePage from './components/pages/HomePage';
+import MyPage from './components/pages/MyPage';
 
 function App() {
 
+  const Blogs = () => {
+    return <h1>BLOGSIDA</h1>
+  }
+
+  const [loggedInUser, setLoggedInUser] = useState(null)
+
   return (
-    <div className='App'>
       <BrowserRouter>
-      <Navbar />
+   
+      {/* <Route component={<Navbar />} /> */}
+    
       <Routes>
-        <Route path='/' component={<HomePage />} />
-
-        <Route path='Login' component={<Login />} />
-        <Route path='Register' component={<Register />} />
-        <Route path="Linkpage" component={<LinkPage />} />
-        <Route path="Unauthorized" component={<Unauthorized />} />
-
-        <Route element={<RequireAuth allowedRoles={[ROLES.User]} />}>
-          <Route path="Homepage" component={<HomePage />} />
-      </Route>
-
-      <Route element={<RequireAuth allowedRoles={[ROLES.Admin]} />}>
-          <Route path="Admin" component={<Admin />} />
-        </Route>
+      <Route path='/' element={<HomePage loggedInUser={loggedInUser} setLoggedInUser={setLoggedInUser}/>} />
+      <Route path='mypage' element={<MyPage loggedInUser={loggedInUser}/>} />
+        <Route path='login' element={<Login setLoggedInUser={setLoggedInUser}/>} />
+        <Route path='register' element={<Register />} />
+        <Route path="linkpage" element={<LinkPage />} />
+        <Route path="unauthorized" element={<Unauthorized />} />
   
       </Routes>
       </BrowserRouter>
-      </div>
   );
 }
 

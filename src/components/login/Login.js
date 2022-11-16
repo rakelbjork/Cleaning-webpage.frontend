@@ -2,17 +2,17 @@ import React, { useState } from "react";
 import "../login/Login.css"
 
 const Login = (props) => {
-    const [values, setValues] = useState({
-        username: "",
-        password: "",
-    });
+
+const [username, setUsername] = useState("");
+const [password, setPassword] = useState("");
+
 
     const { setLoggedInUser } = props;
 
     const handleLogin = async (event) => {
         event.preventDefault();
 
-        let response = await fetch(`http://localhost:8080/api/auth/login/api/auth/login`, {
+        let response = await fetch(`http://localhost:8080/api/auth/login`, {
             method: 'POST',
             body: JSON.stringify({
                 username: username,
@@ -24,7 +24,7 @@ const Login = (props) => {
         })
         let token = await response.text();
 
-        response = await fetch(`http://localhost:8080/api/auth/login/api/auth/whoami?token=${token}`)
+        response = await fetch(`http://localhost:8080/api/auth/whoami?token=${token}`)
         let user = await response.json();
         setLoggedInUser(user);
     }

@@ -1,0 +1,60 @@
+.navbar {
+    width: 100%;
+    height: 90px;
+    top: 0;
+    left: 0;
+    background-color: rgb(26, 39, 34);
+    border-bottom: 1px solid rgb(39, 45, 45);
+}
+
+.navbar .container {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+}
+
+.navbar span {
+    color:rgb(15, 49, 63)
+}
+
+.navbar .nav-menu {
+    display: flex;
+}
+
+.navbar li {
+    padding: 1rem;
+}
+
+.meny {
+    display: none;
+}
+
+@media screen and (max-width: 940px) {
+    .meny {
+        display: block;
+    }
+
+    .navbar .nav-menu {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        top: 90px;
+        right: -100%;
+        height: 100%;
+        width: 100%;
+        background: rgba(red, green, blue, alpha);
+        transition: o.4s ease-in-out;
+        z-index: 10;
+    }
+
+    .navbar .active {
+        right: 0;
+    }
+    
+    .navbar .nav-menu li a {
+        font-size: 2rem;
+    }
+}

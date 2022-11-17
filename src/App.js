@@ -22,7 +22,7 @@ function App() {
       <BrowserRouter>
    
       {/* <Route component={<Navbar />} /> */}
-    
+     <Navbar/>
       <Routes>
       <Route path='/' element={<HomePage loggedInUser={loggedInUser} setLoggedInUser={setLoggedInUser}/>} />
       <Route path='mypage' element={<MyPage loggedInUser={loggedInUser}/>} />

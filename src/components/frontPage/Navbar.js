@@ -11,7 +11,7 @@ const Navbar = () => {
     return(
         <div className='navbar'>
             <div className='container'>
-                <h1><span>StädafintAB</span></h1>
+                <h1><span>Städafint AB</span></h1>
                 <button className='btn'>Logga in</button>
                 <ul className={click ? 'nav-menu active' : 'nav-manu'}>
                 <li><a href='#'>Hem</a></li>

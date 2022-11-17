@@ -26,7 +26,6 @@ const HomePage = (props) => {
             <>
         
             <header className="header-homepage">
-                <img src={logo} className="logo" alt="cleaning-logo" />
 
                 <li><a href="#our-services">VÅRA PAKET</a></li>
                 <li><a href="/">HÄR FINNS VI</a></li>

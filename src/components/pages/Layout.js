@@ -17,7 +17,7 @@ const Layout = () => {
           <li>
             <Link to="/Inloggad">Logga in</Link>
           </li>
-          <li>
+          <li> 
             <Link to="/Kontakt">Kontakta oss</Link>
           </li>
                   </ul>

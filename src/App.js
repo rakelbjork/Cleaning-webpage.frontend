@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Login from './components/login/Login';
 
-import Register from './components/register/RegisterForm';
+import Register from './components/register/Register';
 import Unauthorized from './components/login/Unauthorized';
 import LinkPage from './components/pages/LinkPage';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';

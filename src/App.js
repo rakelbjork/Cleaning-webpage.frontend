@@ -12,27 +12,23 @@ import MyPage from './components/pages/MyPage';
 
 function App() {
 
-  const Blogs = () => {
-    return <h1>BLOGSIDA</h1>
-  }
-
   const [loggedInUser, setLoggedInUser] = useState(null)
 
   return (
       <BrowserRouter>
    
-      {/* <Route component={<Navbar />} /> */}
      <Navbar/>
       <Routes>
       <Route path='/' element={<HomePage loggedInUser={loggedInUser} setLoggedInUser={setLoggedInUser}/>} />
       <Route path='mypage' element={<MyPage loggedInUser={loggedInUser}/>} />
         <Route path='login' element={<Login setLoggedInUser={setLoggedInUser}/>} />
         <Route path='register' element={<Register />} />
-        <Route path="linkpage" element={<LinkPage />} />
         <Route path="unauthorized" element={<Unauthorized />} />
   
       </Routes>
       </BrowserRouter>
+
+      
   );
 }
 

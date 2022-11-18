@@ -6,10 +6,27 @@ const MyPage = (props) => {
 
 
   return (
-    <div>Hejsan {loggedInUser.username}s Mypage
-        
+    <div className="App">
+
+      {loggedInUser
+
+        ?
+
+        <div>
+          <h1>{loggedInUser.username}Mina Sidor</h1>
+          <MyPage user={loggedInUser} />
+          <button onClick={() => setLoggedInUser(null)}>Logga ut</button>
+        </div>
+
+        :
+
+        <LoginForm setLoggedInUser={setLoggedInUser} />
+
+      }
+
 
     </div>
+
   )
 }
 

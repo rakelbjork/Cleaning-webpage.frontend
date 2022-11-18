@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import "../login/Login.css"
 
-const Login = (props) => {
+const Login = (event) => {
+    event.preventDefault();
+
 
 const [username, setUsername] = useState("");
 const [password, setPassword] = useState("");
@@ -12,7 +14,7 @@ const [password, setPassword] = useState("");
     const handleLogin = async (event) => {
         event.preventDefault();
 
-        let response = await fetch(`http://localhost:8080/api/auth/login`, {
+        await fetch(`http://localhost:8080/api/auth/login`, {
             method: 'POST',
             body: JSON.stringify({
                 username: username,

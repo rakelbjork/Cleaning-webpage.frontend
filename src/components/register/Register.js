@@ -16,21 +16,24 @@ const Register = (props) => {
 
         event.preventDefault()
 
-        await fetch(`http://localhost:8080/api/register`, {
+        await fetch(`http://localhost:8080/api/appuser`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
                 Authorization: `Bearer ${user.token}`
             },
             body: JSON.stringify({
+                username: username,
                 firstname: firstname,
                 lastname: lastname,
+                adress: adress,
+                phonenumber: phonenumber,
                 username: username,
                 password: password
             })
         })
 
-        let response = await fetch(`http://localhost:8080/api/appuser/${user.long}/user`, {
+        let response = await fetch(`http://localhost:8080/api/appuser/${user.id}/appuser`, {
             headers: {
                 Authorization: `Bearer ${user.token}`
             }
@@ -40,11 +43,24 @@ const Register = (props) => {
         setAppUser(appuser)
     }
 
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        console.log(username);
+    }
+
 
     return (
         <div>
             <h2>Register</h2>
-            <form>
+            <form className="register-form" onSubmit={handleSubmit}>
+                <p>Username</p>
+                <input
+                    type="text"
+                    placeholder="Username"
+                    onChange={(e) => setUsername(e.target.value)}
+                    value={username}
+                />
+
                 <p>Firstname</p>
                 <input
                     type="text"
@@ -52,7 +68,6 @@ const Register = (props) => {
                     onChange={(e) => setFirstname(e.target.value)}
                     value={firstname}
                 />
-
                 <p>Lastname</p>
                 <input
                     type="text"
@@ -61,12 +76,20 @@ const Register = (props) => {
                     value={lastname}
                 />
 
-                <p>Username</p>
+                <p>Adress</p>
                 <input
                     type="text"
-                    placeholder="Username"
-                    onChange={(e) => setUsername(e.target.value)}
-                    value={username}
+                    placeholder="Adress"
+                    onChange={(e) => setAdress(e.target.value)}
+                    value={adress}
+                />
+
+                <p>Phonenumber</p>
+                <input
+                    type="text"
+                    placeholder="Phonenumber"
+                    onChange={(e) => setPhonenumber(e.target.value)}
+                    value={phonenumber}
                 />
 
                 <p>Password</p>
@@ -76,6 +99,7 @@ const Register = (props) => {
                     value={password}
                 />
                 <br /><br />
+                <input value={pass} onChange={(e) => setPass(e.target.value)} type="password" placeholder="" id="password" name="password" />
                 <button onClick={handleSave}>Save</button>
 
             </form>

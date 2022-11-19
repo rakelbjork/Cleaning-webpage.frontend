@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Login from './components/login/Login';
-
+import Layout from './components/pages/Layout';
 import Register from './components/register/Register';
 import Unauthorized from './components/login/Unauthorized';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
@@ -21,8 +21,8 @@ function App() {
         <Route path='login' element={<Login setLoggedInUser={setLoggedInUser}/>} />
         <Route path='register' element={<Register />} />
         <Route path='mypage' element={<MyPage loggedInUser={loggedInUser}/>} />
+        <Route path='layout' element={<Layout />} />
         <Route path="unauthorized" element={<Unauthorized />} />
-  
       </Routes>
       </BrowserRouter>
   );

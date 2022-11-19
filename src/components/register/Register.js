@@ -1,11 +1,14 @@
 import { useRef, useState, useEffect } from "react";
 import React from "react";
 import {Outlet} from "react-router-dom";
+import App from "../../App";
 
 const Register = (props) => {
 
     const [firstname, setFirstname] = useState("")
     const [lastname, setLastname] = useState("")
+    const [adress, setAdress] = useState("")
+    const [phonenumber, setPhonenumber] = useState("")
     const [username, setUsername] = useState("")
     const [password, setPassword] = useState("")
     const { setRegister, user } = props;
@@ -22,7 +25,6 @@ const Register = (props) => {
                 Authorization: `Bearer ${user.token}`
             },
             body: JSON.stringify({
-                username: username,
                 firstname: firstname,
                 lastname: lastname,
                 adress: adress,
@@ -37,9 +39,9 @@ const Register = (props) => {
                 Authorization: `Bearer ${user.token}`
             }
         })
-        let user = await response.json()
+        let appUser = await response.json()
 
-        setUser(user)
+        setAppUser(appuser)
     }
 
     const handleSubmit = (e) => {
@@ -52,15 +54,8 @@ const Register = (props) => {
         <>
         <Outlet />
         <div>
-            <h2>Register</h2>
-            <form className="register-form" onSubmit={handleSubmit}>
-                <p>Username</p>
-                <input
-                    type="text"
-                    placeholder="Username"
-                    onChange={(e) => setUsername(e.target.value)}
-                    value={username}
-                />
+            <h2>Registrera ny användare:</h2>
+            <form className="register" onSubmit={handleSubmit}>
 
                 <p>Firstname</p>
                 <input
@@ -93,6 +88,14 @@ const Register = (props) => {
                     value={phonenumber}
                 />
 
+                <p>Username</p>
+                <input
+                    type="text"
+                    placeholder="Username"
+                    onChange={(e) => setUsername(e.target.value)}
+                    value={username}
+                />
+
                 <p>Password</p>
                 <textarea
                     placeholder="Password"
@@ -100,7 +103,6 @@ const Register = (props) => {
                     value={password}
                 />
                 <br /><br />
-                <input value={pass} onChange={(e) => setPass(e.target.value)} type="password" placeholder="" id="password" name="password" />
                 <button onClick={handleSave}>Save</button>
 
             </form>

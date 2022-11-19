@@ -6,6 +6,7 @@ import Login from '../login/Login';
 import './navBar/Navbar.css';
 import '../pages/homepage.css';
 import logo from '../assets/logoStadaFint.png';
+import Layout from '../pages/Layout';
 
 
 const Navbar = () => {
@@ -27,7 +28,7 @@ const Navbar = () => {
           <Link to="/register">Registrera ny användare</Link>
         </li>
         <li>
-          <Link to="/contact">Kontakta oss</Link>
+          <Link to="/layout">Kontakta oss</Link>
         </li>
       </ul>
       <div className='meny' onClick={handleClick}>

@@ -8,6 +8,8 @@ import Navbar from '../src/components/frontPage/Navbar';
 import './components/frontPage/navBar/Navbar.css';
 import HomePage from './components/pages/HomePage';
 import MyPage from './components/pages/MyPage';
+import Bokning from './components/booking/Bokning';
+import MyBookins from './components/booking/MyBookings'
 
 function App() {
 
@@ -22,6 +24,8 @@ function App() {
         <Route path='register' element={<Register />} />
         <Route path='mypage' element={<MyPage loggedInUser={loggedInUser}/>} />
         <Route path='layout' element={<Layout />} />
+        <Route path='bokning' element={<Bokning loggedInUser={loggedInUser}/>} />
+        <Route path='mybookings' element={<MyBookins />} />
         <Route path="unauthorized" element={<Unauthorized />} />
       </Routes>
       </BrowserRouter>

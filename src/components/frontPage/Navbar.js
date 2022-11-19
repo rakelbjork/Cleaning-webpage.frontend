@@ -16,7 +16,7 @@ const Navbar = () => {
 
     return(
         <nav className='nav'>
-            <img class="logo-width" src={logo} className="logo" alt="cleaning-logo" />
+            <img src={logo} className="logo" alt="cleaning-logo" />
       <ul>
         <li>
           <Link to="/">Hem</Link>
@@ -26,6 +26,9 @@ const Navbar = () => {
         </li>
         <li>
           <Link to="/register">Registrera ny användare</Link>
+        </li>
+        <li>
+          <Link to="/bokning">Boka städ!</Link>
         </li>
         <li>
           <Link to="/layout">Kontakta oss</Link>

@@ -1,5 +1,6 @@
 import React from 'react'
 
+
 const MyPage = (props) => {
 
     const {loggedInUser} = props
@@ -30,4 +31,4 @@ const MyPage = (props) => {
   )
 }
 
-export default MyPage
+export default MyPage;

@@ -1,8 +1,11 @@
 import React, { useState } from "react";
+import { Link, Outlet } from "react-router-dom";
+import Register from "../register/Register";
+import { Form } from "react-router-dom";
 import "../login/Login.css"
 
-const Login = (event) => {
-    event.preventDefault();
+
+const Login = (props) => {
 
 
 const [username, setUsername] = useState("");
@@ -12,7 +15,7 @@ const [password, setPassword] = useState("");
     const { setLoggedInUser } = props;
 
     const handleLogin = async (event) => {
-        event.preventDefault();
+        
 
         await fetch(`http://localhost:8080/api/auth/login`, {
             method: 'POST',
@@ -33,6 +36,8 @@ const [password, setPassword] = useState("");
 
 
     return (
+        <>
+        <Outlet />
         <div>
 
             <h2>Login</h2>
@@ -55,9 +60,16 @@ const [password, setPassword] = useState("");
                 <br /><br />
                 <button onClick={handleLogin}>Login</button>
 
+                <div className="flexGrow">
+                <Link to="/register">
+                <button onClick={handleLogin}>Registrera ny användare</button>
+                </Link>
+            </div>
+
             </form>
 
         </div>
+        </>
     );
 
 }

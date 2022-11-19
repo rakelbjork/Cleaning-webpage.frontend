@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom';
 import {HiOutlineMenu} from 'react-icons/hi'
 import {HiOutlineChevronUp} from 'react-icons/hi'
+import Login from '../login/Login';
 import './navBar/Navbar.css';
 import '../pages/homepage.css';
 import logo from '../assets/logoStadaFint.png';
@@ -13,22 +15,26 @@ const Navbar = () => {
 
     return(
         <nav className='nav'>
-            <div className='d-flex justify-content-between d-sm-none'>
             <img class="logo-width" src={logo} className="logo" alt="cleaning-logo" />
-                <h1><span>Städafint AB</span></h1>
-                <ul className={click ? 'nav-menu active' : 'nav-manu'}>
-                <li><a href='d-flex align-items-center justify-content-center bg-info border-radius p-4 shadow-sm">'>Hem</a></li>
-                <li><a href='d-flex align-items-center justify-content-center bg-info border-radius p-4 shadow-sm"'>Städningar</a></li>
-                <li><a href='d-flex align-items-center justify-content-center bg-info border-radius p-4 shadow-sm"'>Om oss</a></li>
-                <li><a href='d-flex align-items-center justify-content-center bg-info border-radius p-4 shadow-sm"'>Kontakt</a></li>
-                </ul>
-               <div className='meny' onClick={handleClick}>
+      <ul>
+        <li>
+          <Link to="/">Hem</Link>
+        </li>
+        <li>
+          <Link to="/login">Login</Link>
+        </li>
+        <li>
+          <Link to="/register">Registrera ny användare</Link>
+        </li>
+        <li>
+          <Link to="/contact">Kontakta oss</Link>
+        </li>
+      </ul>
+      <div className='meny' onClick={handleClick}>
                 {click ? (<HiOutlineChevronUp className='icon' />) : <HiOutlineMenu className='icon'/>}
-                
                 </div>
-            </div>
-        </nav>
-    )
+    </nav>
+    );
 }
 
 export default Navbar;

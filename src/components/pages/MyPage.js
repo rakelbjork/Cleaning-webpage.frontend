@@ -20,7 +20,7 @@ const MyPage = (props) => {
 
         :
 
-        <LoginForm setLoggedInUser={setLoggedInUser} />
+        <Login setLoggedInUser={setLoggedInUser} />
 
       }
 

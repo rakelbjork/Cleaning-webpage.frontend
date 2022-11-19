@@ -1,7 +1,6 @@
 import { useRef, useState, useEffect } from "react";
-import { faCheck, faTimes, faInfoCircle } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Link } from "react-router-dom";
+import React from "react";
+import {Outlet} from "react-router-dom";
 
 const Register = (props) => {
 
@@ -33,14 +32,14 @@ const Register = (props) => {
             })
         })
 
-        let response = await fetch(`http://localhost:8080/api/appuser/${user.id}/appuser`, {
+        let response = await fetch(`http://localhost:8080/api/appuser/${user.id}/register`, {
             headers: {
                 Authorization: `Bearer ${user.token}`
             }
         })
-        let appuser = await response.json()
+        let user = await response.json()
 
-        setAppUser(appuser)
+        setUser(user)
     }
 
     const handleSubmit = (e) => {
@@ -50,6 +49,8 @@ const Register = (props) => {
 
 
     return (
+        <>
+        <Outlet />
         <div>
             <h2>Register</h2>
             <form className="register-form" onSubmit={handleSubmit}>
@@ -105,6 +106,7 @@ const Register = (props) => {
             </form>
 
         </div>
+        </>
     )
             }
 

@@ -1,28 +1,20 @@
 import { Outlet, Link } from "react-router-dom";
+import Navbar from "../frontPage/Navbar";
 
 const Layout = () => {
   return (
     <>
-      <nav>
+<Navbar />
+<Outlet />
         <ul>
           <li>
-          
-            <Link to="/">Hem</Link>
-          </li>
-          <li>
-            <Link to="/Tjanster">Våra städtjänster</Link>
-          </li>
-          <li>
-            <Link to="/SkapaKonto">Skapa konto</Link>
-          </li>
-          <li>
-            <Link to="/Inloggad">Logga in</Link>
+            <Link to="/login">Logga in</Link>
           </li>
           <li> 
-            <Link to="/Kontakt">Kontakta oss</Link>
+            <Link to="/register">Registrera</Link>
           </li>
                   </ul>
-      </nav>
+
 
       <Outlet />
     </>

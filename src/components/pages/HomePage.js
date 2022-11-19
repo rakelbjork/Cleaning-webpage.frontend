@@ -1,16 +1,14 @@
 import React, { useEffect } from 'react';
 import "../pages/homepage.css";
-import { useNavigate, Link, Navigate } from "react-router-dom";
-import { useContext } from "react";
-import Login from '../login/Login';
 import Navbar from '../frontPage/Navbar';
-import Register from '../register/Register';
+import { Outlet } from 'react-router-dom';
+import Login from '../login/Login';
 
-
-
-const HomePage = (props) => {
+const HomePage = () => {
+    return (
+ <h1> FÖRSTA SIDAN </h1>
+    );
    
-
-}
+};
 
 export default HomePage;

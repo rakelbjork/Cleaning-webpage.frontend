@@ -10,6 +10,7 @@ import HomePage from './components/pages/HomePage';
 import MyPage from './components/pages/MyPage';
 import Bokning from './components/booking/Bokning';
 import MyBookins from './components/booking/MyBookings'
+import NoPage from "./components/pages/NoPage";
 
 function App() {
 
@@ -24,9 +25,10 @@ function App() {
           <Route path='register' element={<Register />} />
           <Route path='mypage' element={<MyPage loggedInUser={loggedInUser}/>} />
           <Route path='kontakt' element={<Kontakt />} />
-        <Route path="unauthorized" element={<Unauthorized />} />
+          <Route path="unauthorized" element={<Unauthorized />} />
           <Route path='bokning' element={<Bokning loggedInUser={loggedInUser}/>} />
           <Route path='mybookings' element={<MyBookins />} />
+          <Route path="*" element={<NoPage />} />
         </Route>
 
       </Routes>

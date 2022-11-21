@@ -1,7 +1,6 @@
 import { useRef, useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import React from "react";
-import {Outlet} from "react-router-dom";
-import App from "../../App";
 
 const Register = (props) => {
 
@@ -104,9 +103,8 @@ const Register = (props) => {
                 />
                 <br /><br />
                 <button onClick={handleSave}>Save</button>
-
+                
             </form>
-
         </div>
         </>
     )

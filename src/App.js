@@ -3,7 +3,7 @@ import Login from './components/login/Login';
 import Kontakt from './components/pages/Kontakt';
 import Register from './components/register/Register';
 import Unauthorized from './components/login/Unauthorized';
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navbar from '../src/components/frontPage/Navbar';
 import './components/frontPage/navBar/Navbar.css';
 import HomePage from './components/pages/HomePage';
@@ -14,7 +14,7 @@ import NoPage from "./components/pages/NoPage";
 
 function App() {
 
-  const [loggedInUser, setLoggedInUser] = useState()
+  const [loggedInUser, setLoggedInUser] = useState(null)
 
   return (
       <BrowserRouter>

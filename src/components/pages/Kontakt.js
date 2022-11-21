@@ -1,5 +1,3 @@
-import { Outlet, Link } from "react-router-dom";
-import Navbar from "../frontPage/Navbar";
 import React from "react";
 
 const Kontakt = () => {
@@ -8,7 +6,7 @@ const Kontakt = () => {
 <div> 
   Kontakta oss:
 </div>
-      <Outlet />
+
     </>
   )
 };

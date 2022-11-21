@@ -17,7 +17,7 @@ const Navbar = () => {
 
     return(
       <>
-              <nav className='nav'>
+              <nav className='navbar'>
             <img src={logo} className="logo" alt="städafint1.png" />
       <ul>
         <li>

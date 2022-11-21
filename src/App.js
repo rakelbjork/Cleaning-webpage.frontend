@@ -11,6 +11,7 @@ import MyPage from './components/pages/MyPage';
 import Bokning from './components/booking/Bokning';
 import MyBookins from './components/booking/MyBookings'
 import NoPage from "./components/pages/NoPage";
+import Tjanster from './components/booking/Services';
 
 function App() {
 
@@ -28,6 +29,7 @@ function App() {
           <Route path="unauthorized" element={<Unauthorized />} />
           <Route path='bokning' element={<Bokning loggedInUser={loggedInUser}/>} />
           <Route path='mybookings' element={<MyBookins />} />
+          <Route path='services' element={<Services />} />
           <Route path="*" element={<NoPage />} />
         </Route>
 

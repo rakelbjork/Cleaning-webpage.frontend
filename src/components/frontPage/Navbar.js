@@ -7,6 +7,7 @@ import './navBar/Navbar.css';
 import '../pages/homepage.css';
 import logo from '../assets/städafint1.png';
 import Kontakt from '../pages/Kontakt';
+import Services from '../booking/Services';
 
 
 const Navbar = () => {
@@ -26,7 +27,10 @@ const Navbar = () => {
           <Link to="/login">Login</Link>
         </li>
         <li>
-          <Link to="/bokning">Våra tjänster</Link>
+          <Link to="/bokning">Boka</Link>
+        </li>
+        <li>
+          <Link to="/services">Våra tjänster</Link>
         </li>
         <li>
           <Link to="/kontakt">Kontakta oss</Link>

@@ -5,7 +5,7 @@ import {HiOutlineChevronUp} from 'react-icons/hi'
 import Login from '../login/Login';
 import './navBar/Navbar.css';
 import '../pages/homepage.css';
-import logo from '../assets/städafint2.png';
+import logo from '../assets/städafint1.png';
 import Kontakt from '../pages/Kontakt';
 
 
@@ -17,7 +17,7 @@ const Navbar = () => {
     return(
       <>
               <nav className='nav'>
-            <img src={logo} className="logo" alt="städafint2.png" />
+            <img src={logo} className="logo" alt="städafint1.png" />
       <ul>
         <li>
           <Link to="/">Hem</Link>

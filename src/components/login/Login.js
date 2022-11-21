@@ -14,7 +14,7 @@ const [password, setPassword] = useState("");
     const handleLogin = async (event) => {
         event.preventDefault();
 
-        let response = await fetch('http://localhost:8080/api/auth/login', {
+        let response = await fetch("http://localhost:8080/api/auth/login", {
             method: 'POST',
             body: JSON.stringify({
                 username: username,

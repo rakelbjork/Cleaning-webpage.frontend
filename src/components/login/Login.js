@@ -12,9 +12,9 @@ const [password, setPassword] = useState("");
     const { setLoggedInUser } = (props);
 
     const handleLogin = async (event) => {
-        e.preventDefault();
+        event.preventDefault();
 
-        let response = await fetch(`${process.env.REACT_APP_BASE_URL}/api/auth/login`, {
+        let response = await fetch('http://localhost:3000/api/auth/login', {
             method: 'POST',
             body: JSON.stringify({
                 username: username,
@@ -26,10 +26,10 @@ const [password, setPassword] = useState("");
         })
         let token = await response.text();
 console.log("token: ", token)
-        response = await fetch(`http://localhost:8080/api/auth/whoami?token=${token}`)
+        response = await fetch('http://localhost:8080/api/auth/whoami?token=${token}')
         let user = await response.json();
         setLoggedInUser(user);
-console.log("WHOAMI: ", user)
+
         
     }
 

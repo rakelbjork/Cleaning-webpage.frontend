@@ -1,5 +1,11 @@
-const Tjanster = () => {
-    return <div><h1>Våra städtjänster</h1>;
+import React from "react";
+
+const Services = () => {
+
+
+    return ( 
+    
+    <div><h1>Våra städtjänster</h1>;
     <div>
       
       
@@ -72,8 +78,8 @@ const Tjanster = () => {
       
       
       </div>
-
+    )
     
   };
   
-  export default Tjanster;
+  export default Services;

@@ -40,7 +40,7 @@ const Register = (props) => {
         })
         let appUser = await response.json()
 
-        setAppUser(appuser)
+        setRegister(user)
     }
 
     const handleSubmit = (e) => {

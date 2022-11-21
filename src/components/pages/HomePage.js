@@ -6,8 +6,11 @@ const HomePage = () => {
 
 
     return (
+        <>
 
-        <h1>Första sidan!</h1>
+        <MyPage />
+        
+        </>
 
     );
    

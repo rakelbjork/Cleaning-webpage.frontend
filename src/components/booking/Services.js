@@ -1,6 +1,6 @@
 import React from "react";
 
-const Tjanster = () => {
+const Services = () => {
 
 
     return ( 
@@ -82,4 +82,4 @@ const Tjanster = () => {
     
   };
   
-  export default Tjanster;
+  export default Services;

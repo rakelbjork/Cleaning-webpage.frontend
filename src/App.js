@@ -11,7 +11,7 @@ import MyPage from './components/pages/MyPage';
 import Bokning from './components/booking/Bokning';
 import MyBookins from './components/booking/MyBookings'
 import NoPage from "./components/pages/NoPage";
-import Tjanster from './components/booking/Services';
+import Services from './components/booking/Services';
 
 function App() {
 

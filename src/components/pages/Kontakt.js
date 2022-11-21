@@ -2,7 +2,7 @@ import { Outlet, Link } from "react-router-dom";
 import Navbar from "../frontPage/Navbar";
 import React from "react";
 
-const Layout = () => {
+const Kontakt = () => {
   return (
     <>
 <div> 
@@ -13,4 +13,4 @@ const Layout = () => {
   )
 };
 
-export default Layout;
+export default Kontakt;

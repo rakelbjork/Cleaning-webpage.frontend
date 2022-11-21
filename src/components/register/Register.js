@@ -34,7 +34,7 @@ const Register = (props) => {
             })
         })
 
-        let response = await fetch(`http://localhost:8080/api/appuser/${user.id}/register`, {
+        let response = await fetch(`http://localhost:8080/api/register/create`, {
             headers: {
                 Authorization: `Bearer ${user.token}`
             }
@@ -52,7 +52,7 @@ const Register = (props) => {
 
     return (
         <>
-        <Outlet />
+        
         <div>
             <h2>Registrera ny användare:</h2>
             <form className="register" onSubmit={handleSubmit}>

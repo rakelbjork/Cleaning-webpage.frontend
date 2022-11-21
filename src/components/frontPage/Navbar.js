@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom';
+import { Link, Outlet } from 'react-router-dom';
 import {HiOutlineMenu} from 'react-icons/hi'
 import {HiOutlineChevronUp} from 'react-icons/hi'
 import Login from '../login/Login';
 import './navBar/Navbar.css';
 import '../pages/homepage.css';
 import logo from '../assets/logoStadaFint.png';
-import Layout from '../pages/Layout';
+import Kontakt from '../pages/Kontakt';
 
 
 const Navbar = () => {
@@ -15,7 +15,8 @@ const Navbar = () => {
     const handleClick = ()  => setClick(!click)
 
     return(
-        <nav className='nav'>
+      <>
+              <nav className='nav'>
             <img src={logo} className="logo" alt="cleaning-logo" />
       <ul>
         <li>
@@ -25,19 +26,19 @@ const Navbar = () => {
           <Link to="/login">Login</Link>
         </li>
         <li>
-          <Link to="/register">Registrera ny användare</Link>
+          <Link to="/bokning">Våra tjänster</Link>
         </li>
         <li>
-          <Link to="/bokning">Boka städ!</Link>
-        </li>
-        <li>
-          <Link to="/layout">Kontakta oss</Link>
+          <Link to="/kontakt">Kontakta oss</Link>
         </li>
       </ul>
       <div className='meny' onClick={handleClick}>
                 {click ? (<HiOutlineChevronUp className='icon' />) : <HiOutlineMenu className='icon'/>}
                 </div>
+               
     </nav>
+    <Outlet />
+    </>
     );
 }
 

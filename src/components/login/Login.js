@@ -1,23 +1,20 @@
 import React, { useState } from "react";
-import { Link, Outlet , useNavigate} from "react-router-dom";
-import Register from "../register/Register";
-import { Form, event } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "../login/Login.css"
 
 
 const Login = (props) => {
 
-    const navigate = useNavigate();
 const [username, setUsername] = useState("");
 const [password, setPassword] = useState("");
 
 
-    const { setLoggedInUser } = props;
+    const { setLoggedInUser } = (props);
 
     const handleLogin = async (event) => {
-        
+        e.preventDefault();
 
-        await fetch(`http://localhost:8080/api/auth/login`, {
+        let response = await fetch(`${process.env.REACT_APP_BASE_URL}/api/auth/login`, {
             method: 'POST',
             body: JSON.stringify({
                 username: username,
@@ -28,17 +25,18 @@ const [password, setPassword] = useState("");
             }
         })
         let token = await response.text();
-
+console.log("token: ", token)
         response = await fetch(`http://localhost:8080/api/auth/whoami?token=${token}`)
         let user = await response.json();
         setLoggedInUser(user);
-        navigate("/mypage");
+console.log("WHOAMI: ", user)
+        
     }
 
 
     return (
         <>
-        <Outlet />
+       
         <div>
 
             <h2>Login</h2>

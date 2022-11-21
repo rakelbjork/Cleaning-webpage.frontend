@@ -1,5 +1,6 @@
 import { useState } from "react";
 import React from "react";
+import './Booking.css';
 
 const Bokning = (props) => {
 

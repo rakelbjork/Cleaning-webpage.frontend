@@ -17,11 +17,10 @@ const Register = (props) => {
 
         event.preventDefault()
 
-        await fetch(`http://localhost:8080/api/appuser`, {
+        await fetch(`http://localhost:8080/api/auth/register`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                Authorization: `Bearer ${user.token}`
             },
             body: JSON.stringify({
                 firstname: firstname,
@@ -33,14 +32,20 @@ const Register = (props) => {
             })
         })
 
-        let response = await fetch(`http://localhost:8080/api/register/create`, {
-            headers: {
-                Authorization: `Bearer ${user.token}`
+        let response = await fetch(`http://localhost:8080/api/auth/login`, {
+            method: 'POST',
+            body: JSON.stringify({
+                username: username,
+                password: password
+            }),    
+        headers: {
+                'Content-Type': 'application/json',
+
             }
         })
         let appUser = await response.json()
-
-        setRegister(user)
+        
+        setRegister(appUser)
     }
 
     const handleSubmit = (e) => {

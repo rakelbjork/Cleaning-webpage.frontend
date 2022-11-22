@@ -16,7 +16,6 @@ import Services from './components/booking/Services';
 function App() {
 
   const [loggedInUser, setLoggedInUser] = useState(null)
-  const [user, setUser] = useState({ loggedIn: false });
 
   return (
     

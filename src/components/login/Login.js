@@ -41,19 +41,23 @@ const Navigate = useNavigate();
 
     const logInCheck = async (loggedIn) => {
         loggedIn = JSON.parse(loggedIn);
-        var response = await fetch(`http://localhost:8080/api/auth/whoami?token=${loggedIn.token}`)
-        let user = await response.json();
-        console.log(user)
-        return user;
+        try{
+            var response = await fetch(`http://localhost:8080/api/auth/whoami?token=${loggedIn.token}`)
+            let user = await response.json();
+            console.log(user)
+            return user;
+        } catch {
+
+            
+        }
+        
 
     }
 
     try{
-        console.log("Hämtning från LocalStorage lyckades")
         var loggedIn = localStorage.getItem("loggedInUser")
         if (loggedIn == null){
             var activeUser = logInCheck(loggedIn);
-            console.log(activeUser);
         } else{
             return <div>Du är redan inloggad</div>
 

@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Link, Outlet } from 'react-router-dom';
+import { Link, Outlet, renderMatches } from 'react-router-dom';
 import {HiOutlineMenu} from 'react-icons/hi'
 import {HiOutlineChevronUp} from 'react-icons/hi'
 import Login from '../login/Login';
@@ -14,6 +14,16 @@ const Navbar = () => {
 
     const[click, setClick] = useState(false)
     const handleClick = ()  => setClick(!click)
+    var condition = null;
+
+
+if (localStorage.getItem("loggedInUser") == null)
+{
+  condition = 1;
+} else {
+  condition = 2;
+}
+ 
 
     return(
       <>
@@ -25,7 +35,15 @@ const Navbar = () => {
           <Link to="/">Hem</Link>
         </li>
         <li>
-          <Link to="/login">Login</Link>
+        {
+      (()=> {
+        switch (condition) {
+          case 1: return <Link to="/login">Login</Link>;
+          case 2: return null;
+          default: <div>Debug</div>;
+        }
+      })()
+     }
         </li>
         <li>
           <Link to="/bokning">Boka</Link>

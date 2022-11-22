@@ -11,9 +11,10 @@ const [username, setUsername] = useState("");
 const [password, setPassword] = useState("");
 const Navigate = useNavigate();
 
-
+    
 
     const { setLoggedInUser } = (props);
+
 
     const handleLogin = async (event) => {
         event.preventDefault();
@@ -33,15 +34,36 @@ const Navigate = useNavigate();
         response = await fetch(`http://localhost:8080/api/auth/whoami?token=${token}`)
         let user = await response.json();
         setLoggedInUser(user);
+        localStorage.setItem("loggedInUser", JSON.stringify(user))
         Navigate("/");
 
     }
 
-    return (
-        <>
-       
-        <div>
+    const logInCheck = async (loggedIn) => {
+        loggedIn = JSON.parse(loggedIn);
+        var response = await fetch(`http://localhost:8080/api/auth/whoami?token=${loggedIn.token}`)
+        let user = await response.json();
+        console.log(user)
+        return user;
 
+    }
+
+    try{
+        console.log("Hämtning från LocalStorage lyckades")
+        var loggedIn = localStorage.getItem("loggedInUser")
+        if (loggedIn == null){
+            var activeUser = logInCheck(loggedIn);
+            console.log(activeUser);
+        } else{
+            return <div>Du är redan inloggad</div>
+
+        }
+        } catch{
+        console.log("Något gick snett med inloggningen! Har du ändrat i LocalStorage manuellt?")
+        
+    }
+    return (
+        <div>
             <h2>Login</h2>
             <form>
                 <p>Username</p>
@@ -67,12 +89,14 @@ const Navigate = useNavigate();
                 <button>Registrera ny användare</button>
                 </Link>
             </div>
-
             </form>
 
         </div>
-        </>
     );
+
+    
+
+    
 
 }
 

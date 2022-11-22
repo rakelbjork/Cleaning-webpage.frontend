@@ -17,11 +17,11 @@ const Register = (props) => {
 
         event.preventDefault()
 
-        await fetch(`http://localhost:8080/api/appuser`, {
+        await fetch(`http://localhost:8080/api/auth/register`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                Authorization: `Bearer ${user.token}`
+                
             },
             body: JSON.stringify({
                 firstname: firstname,

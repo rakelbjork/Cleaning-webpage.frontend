@@ -30,7 +30,7 @@ const Register = (props) => {
                 username: username,
                 password: password
             })
-        })
+        }) 
 
         let response = await fetch(`http://localhost:8080/api/auth/login`, {
             method: 'POST',

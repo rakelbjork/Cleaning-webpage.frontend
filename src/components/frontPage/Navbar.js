@@ -19,6 +19,7 @@ const Navbar = () => {
       <>
               <nav className='navbar'>
             <img src={logo} className="logo" alt="städafint1.png" />
+            <div className='nav-menu'>
       <ul>
         <li>
           <Link to="/">Hem</Link>
@@ -36,6 +37,7 @@ const Navbar = () => {
           <Link to="/kontakt">Kontakta oss</Link>
         </li>
       </ul>
+      </div>
       <div className='meny' onClick={handleClick}>
                 {click ? (<HiOutlineChevronUp className='icon' />) : <HiOutlineMenu className='icon'/>}
                 </div>

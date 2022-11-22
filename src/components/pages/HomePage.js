@@ -7,8 +7,6 @@ import './homepage.css';
 
 const HomePage = () => {
 
-    //const { loggedInUser, setLoggedInUser } = props;
-
     return (
         <div className="home">
           <div className="headerContainer">

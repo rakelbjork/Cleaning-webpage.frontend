@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import Register from "../register/Register";
 import "../login/Login.css"
 
 
@@ -8,6 +9,8 @@ const Login = (props) => {
 
 const [username, setUsername] = useState("");
 const [password, setPassword] = useState("");
+const Navigate = useNavigate();
+
 
 
     const { setLoggedInUser } = (props);
@@ -26,10 +29,11 @@ const [password, setPassword] = useState("");
             }
         })
         let token = await response.text();
-        console.log("token: ", token)
+        console.log('token: ', token)
         response = await fetch(`http://localhost:8080/api/auth/whoami?token=${token}`)
         let user = await response.json();
         setLoggedInUser(user);
+        Navigate("/");
 
     }
 
@@ -60,7 +64,7 @@ const [password, setPassword] = useState("");
 
                 <div className="flexGrow">
                 <Link to="/register">
-                <button onClick={handleLogin}>Registrera ny användare</button>
+                <button>Registrera ny användare</button>
                 </Link>
             </div>
 

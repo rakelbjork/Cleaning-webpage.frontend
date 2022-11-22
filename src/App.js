@@ -18,6 +18,7 @@ function App() {
   const [loggedInUser, setLoggedInUser] = useState(null)
 
   return (
+    
       <BrowserRouter>
       <Routes>
         <Route path='/' element={<Navbar />} >

@@ -1,5 +1,5 @@
 import { useRef, useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import React from "react";
 
 const Register = (props) => {
@@ -10,18 +10,20 @@ const Register = (props) => {
     const [phonenumber, setPhonenumber] = useState("")
     const [username, setUsername] = useState("")
     const [password, setPassword] = useState("")
-    const { setRegister, user } = props;
+    const navigate = useNavigate();
 
 
     const handleSave = async (event) => {
 
+        const { setLoggedInUser } = (props);
+
+
         event.preventDefault()
 
-        await fetch(`http://localhost:8080/api/appuser`, {
+        await fetch(`http://localhost:8080/api/auth/register`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                Authorization: `Bearer ${user.token}`
             },
             body: JSON.stringify({
                 firstname: firstname,
@@ -31,16 +33,26 @@ const Register = (props) => {
                 username: username,
                 password: password
             })
-        })
+        }) 
 
-        let response = await fetch(`http://localhost:8080/api/register/create`, {
-            headers: {
-                Authorization: `Bearer ${user.token}`
+        let response = await fetch(`http://localhost:8080/api/auth/login`, {
+            method: 'POST',
+            body: JSON.stringify({
+                username: username,
+                password: password
+            }),    
+        headers: {
+                'Content-Type': 'application/json',
             }
         })
-        let appUser = await response.json()
+        let token = await response.text()
+        response = await fetch(`http://localhost:8080/api/auth/whoami?token=${token}`)
+        let user = await response.json();
+        // Här ska localStorage ligga
+        Window.localStorage.setItem("loggedInUser", user)
+        setLoggedInUser(user);
+        navigate("/MyPage");
 
-        setRegister(user)
     }
 
     const handleSubmit = (e) => {

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import Register from "../register/Register";
 import "../login/Login.css"
 
 
@@ -60,7 +61,7 @@ const [password, setPassword] = useState("");
 
                 <div className="flexGrow">
                 <Link to="/register">
-                <button onClick={handleLogin}>Registrera ny användare</button>
+                <button>Registrera ny användare</button>
                 </Link>
             </div>
 

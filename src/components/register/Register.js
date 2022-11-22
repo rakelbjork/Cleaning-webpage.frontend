@@ -33,12 +33,12 @@ const Register = (props) => {
             })
         })
 
-        let response = await fetch(`http://localhost:8080/api/register/create`, {
+        let response = await fetch(`http://localhost:8080/api/register/${user.id}/create`, {
             headers: {
                 Authorization: `Bearer ${user.token}`
             }
         })
-        let appUser = await response.json()
+        let user = await response.json()
 
         setRegister(user)
     }

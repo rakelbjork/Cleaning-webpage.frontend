@@ -28,6 +28,7 @@ const [password, setPassword] = useState("");
         let token = await response.text();
         console.log('token: ', token)
         response = await fetch(`http://localhost:8080/api/auth/whoami?token=${token}`)
+        localStorage
         let user = await response.json();
         setLoggedInUser(user);
 
@@ -60,7 +61,7 @@ const [password, setPassword] = useState("");
 
                 <div className="flexGrow">
                 <Link to="/register">
-                <button onClick={handleLogin}>Registrera ny användare</button>
+                <button>Registrera ny användare</button>
                 </Link>
             </div>
 

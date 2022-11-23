@@ -1,7 +1,8 @@
 import React from "react";
-import './hompage.css';
+import './homepage.css';
 
 const Kontakt = () => {
+
   return (
     <>
 <div>

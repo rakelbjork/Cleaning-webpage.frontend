@@ -6,7 +6,6 @@ export default class Logout extends Component {
    
     logout = () => {
         window.localStorage.clear();
-        window.location.href = baseUrl +"login";
     }
     render(){
         const isLoggedIn = window.localStorage.getItem('token')

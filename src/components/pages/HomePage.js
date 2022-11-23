@@ -3,7 +3,7 @@ import "../pages/homepage.css";
 import { Link } from 'react-router-dom';
 import './homepage.css';
 
-export default HomePage = () => {
+const HomePage = () => {
 
     return (
         <div className="home">
@@ -18,3 +18,5 @@ export default HomePage = () => {
       );
    
 };
+
+export default HomePage;

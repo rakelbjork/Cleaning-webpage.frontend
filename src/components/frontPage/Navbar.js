@@ -54,9 +54,6 @@ if (localStorage.getItem("loggedInUser") == null)
         <li>
           <Link to="/kontakt">Kontakta oss</Link>
         </li>
-        <li>
-          <Link to="/logout">Logga ut</Link>
-        </li>
       </ul>
       </div>
       <div className='meny' onClick={handleClick}>

@@ -1,11 +1,9 @@
 import React, { useEffect } from 'react';
 import "../pages/homepage.css";
-import bannerImage from "../assets/bakgrund1.png";
 import { Link } from 'react-router-dom';
-import Bokning from '../booking/Bokning';
 import './homepage.css';
 
-const HomePage = () => {
+export default HomePage = () => {
 
     return (
         <div className="home">
@@ -20,5 +18,3 @@ const HomePage = () => {
       );
    
 };
-
-export default HomePage;

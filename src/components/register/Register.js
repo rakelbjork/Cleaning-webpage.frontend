@@ -1,5 +1,5 @@
 import { useRef, useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import React from "react";
 
 const Register = (props) => {
@@ -10,10 +10,13 @@ const Register = (props) => {
     const [phonenumber, setPhonenumber] = useState("")
     const [username, setUsername] = useState("")
     const [password, setPassword] = useState("")
-    const { setRegister, user } = props;
+    const navigate = useNavigate();
 
 
     const handleSave = async (event) => {
+
+        const { setLoggedInUser } = (props);
+
 
         event.preventDefault()
 
@@ -40,12 +43,16 @@ const Register = (props) => {
             }),    
         headers: {
                 'Content-Type': 'application/json',
-
             }
         })
-        let appUser = await response.json()
-        
-        setRegister(appUser)
+        let token = await response.text()
+        response = await fetch(`http://localhost:8080/api/auth/whoami?token=${token}`)
+        let user = await response.json();
+        // Här ska localStorage ligga
+        Window.localStorage.setItem("loggedInUser", user)
+        setLoggedInUser(user);
+        navigate("/MyPage");
+
     }
 
     const handleSubmit = (e) => {

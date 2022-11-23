@@ -10,8 +10,8 @@ const HomePage = () => {
     return (
         <div className="home">
           <div className="headerContainer">
-            <h1> Välkommen till StädaFint.ab! </h1>
-            <p> Boka ny städnig:</p>
+            <h1> Välkommen till StädaFint AB! </h1>
+            <p> Boka ny städning:</p>
             <Link to="/bokning">
               <button> Boka </button>
             </Link>

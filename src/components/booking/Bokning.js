@@ -1,21 +1,44 @@
 import { useState } from "react";
 import React from "react";
 import './Booking.css';
+import { parse } from "@fortawesome/fontawesome-svg-core";
 
 const Bokning = (props) => {
 
     const [time, setTime] = useState("");
     const [date, setDate] = useState("");
     const [optionalMessage, setMessage] = useState("");
+    const [user, setUser] = useState("");
+    const [userId, setUserId] = useState("");
 
     const handleSave = async (event) => {
         event.preventDefault()
 
-        console.log(date);
-        console.log(time);
-        console.log(optionalMessage);
+     
+        
+        try {
+            const object = JSON.parse(localStorage.getItem("loggedInUser"));
+            if (object) {
+                setUser(object);
+                console.log(object)
+                var id = user.id;
+                
+                setUserId(id);
+                console.log(id);
+            }else{
+                setUserId(0);
+            }
+            
 
-        await fetch(`${process.env.REACT_APP_BASE_URL}/api/clean`, {
+
+        }catch{
+            console.log("Där gick något fel")
+            console.log(currentUser);
+            console.log(parsedUser);
+
+        }
+
+        await fetch(`${process.env.REACT_APP_BASE_URL}/api/booking`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -27,7 +50,6 @@ const Bokning = (props) => {
                 id: 1
             })
         })
-        window.location.reload();
     }
 
     return (

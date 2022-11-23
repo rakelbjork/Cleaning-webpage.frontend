@@ -19,7 +19,7 @@ const Logout = () => {
                 window.location.reload();
 
             } 
-        }, 1000);
+        }, 100);
         
       });
     <div>Du loggas nu ut</div>

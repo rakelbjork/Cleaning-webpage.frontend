@@ -9,7 +9,7 @@ import './components/frontPage/navBar/Navbar.css';
 import HomePage from './components/pages/HomePage';
 import MyPage from './components/pages/MyPage';
 import Bokning from './components/booking/Bokning';
-import MyBookins from './components/booking/MyBookings'
+import Bokningar from './components/booking/Bokningar'
 import NoPage from "./components/pages/NoPage";
 import Services from './components/booking/Services';
 
@@ -30,7 +30,7 @@ function App() {
           <Route path='kontakt' element={<Kontakt />} />
           <Route path="unauthorized" element={<Unauthorized />} />
           <Route path='bokning' element={<Bokning loggedInUser={loggedInUser}/>} />
-          <Route path='mybookings' element={<MyBookins />} />
+          <Route path='Bokningar' element={<Bokningar />} />
           <Route path='services' element={<Services />} />
           <Route path="*" element={<NoPage />} />
         </Route>

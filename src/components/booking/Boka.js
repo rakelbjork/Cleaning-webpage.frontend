@@ -20,11 +20,9 @@ const Boka = (props) => {
             const object = JSON.parse(localStorage.getItem("loggedInUser"));
             if (object) {
                 setUser(object);
-                console.log(object)
                 var id = user.id;
                 
                 setUserId(id);
-                console.log(id);
             }else{
                 setUserId(0);
             }
@@ -33,8 +31,6 @@ const Boka = (props) => {
 
         }catch{
             console.log("Där gick något fel")
-            console.log(currentUser);
-            console.log(parsedUser);
 
         }
 

@@ -60,6 +60,7 @@
 .navbar .nav-menu {
     display: flex;
     align-items: center;
+    float: left;
 }
 
 .navbar .nav > li > a {

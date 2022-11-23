@@ -8,11 +8,11 @@ import Navbar from '../src/components/frontPage/Navbar';
 import './components/frontPage/navBar/Navbar.css';
 import HomePage from './components/pages/HomePage';
 import MyPage from './components/pages/MyPage';
-import Bokning from './components/booking/Bokning';
 import Bokningar from './components/booking/Bokningar'
 import NoPage from "./components/pages/NoPage";
 import Services from './components/booking/Services';
 import Logout from './components/login/Logout';
+import Boka from './components/booking/Boka';
 
 function App() {
 
@@ -31,7 +31,7 @@ function App() {
           <Route path='mypage' element={<MyPage loggedInUser={loggedInUser}/>} />
           <Route path='kontakt' element={<Kontakt />} />
           <Route path="unauthorized" element={<Unauthorized />} />
-          <Route path='bokning' element={<Bokning loggedInUser={loggedInUser}/>} />
+          <Route path='bokning' element={<Boka loggedInUser={loggedInUser}/>} />
           <Route path='Bokningar' element={<Bokningar />} />
           <Route path='services' element={<Services />} />
           <Route path='logout' element={<Logout loggedInUser={loggedInUser}/>} />

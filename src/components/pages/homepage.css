@@ -1,11 +1,11 @@
  body{
-  background-image: url('../assets/bakgrund1.png');
-  background-repeat: no-repeat;
+  background-image: no-repeat url('../assets/bakgrund1.png') ;
   background-size: flex;
   margin: 0;
   padding: 0;
   max-width: 100%;
   position: absolute; width: 100%;
+  background-repeat: no-repeat;
  }
 
  

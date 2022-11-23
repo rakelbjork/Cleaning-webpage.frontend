@@ -50,6 +50,8 @@ const Boka = (props) => {
 
     return (
         <div className="headerContainer">
+            <br /><br />
+            <br /><br />
             <div className="headerContainer h1">
                 <h1>Lägg till bokning</h1>
                 </div>

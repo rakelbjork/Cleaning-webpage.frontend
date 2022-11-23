@@ -56,9 +56,7 @@ return (
         bokning={bokning} 
         setBokningar={setBokningar} /> )}
 </div>
-
 )
-
 }
 
 export default Bokningar;

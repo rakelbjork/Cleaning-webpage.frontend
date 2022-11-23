@@ -1,6 +1,7 @@
  body{
   background-image: no-repeat url('../assets/bakgrund1.png') ;
-  background-size: flex;
+  background-repeat: no-repeat;
+  background-size: cover;
   margin: 0;
   padding: 0;
   max-width: 100%;
@@ -14,7 +15,7 @@
   height: 90vh;
   display: flex;
   justify-content: center;
-  align-items: left;
+  align-items: flex-start;
   flex-direction: column;
   background-position: center;
   background-repeat: no-repeat;

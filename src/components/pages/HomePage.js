@@ -8,6 +8,7 @@ const HomePage = () => {
         <div className="home">
           <div className="headerContainer">
             <h1> Välkommen till StädaFint AB! </h1>
+            <br /><br />
             <p> Boka ny städning:</p>
             <Link to="/bokning">
               <button> Boka </button>

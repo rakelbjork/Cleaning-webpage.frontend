@@ -1,7 +1,7 @@
 body{
     background-image: url('../assets/bakgrund1.png');
     background-repeat: no-repeat;
-    background-size: flex;
+    background-size: cover;
     margin: 0;
     padding: 0;
     max-width: 100%;
@@ -14,10 +14,12 @@ body{
     height: 90vh;
     display: flex;
     justify-content: center;
-    align-items: left;
-    flex-direction: column;
+    align-items: center;
+    flex-direction: row;
+    font-size: 10px;
+    font-weight: lighter;
+    flex-wrap: wrap;
     background-position: center;
-    background-repeat: no-repeat;
     background-size: cover;
     font-family: "Gill Sans", "Gill Sans MT", "Calibri", "Trebuchet MS", sans-serif;
   }

@@ -1,3 +1,5 @@
+import './Booking.css';
+
 const Bokning = (props) => {
 
     const { bokning, setBokning, user } = props;
@@ -25,7 +27,7 @@ const Bokning = (props) => {
     }
 
     return (
-        <div>
+        <div className='headerContainer h2'>
             <h2>{bokning.date}</h2>
             <p>{bokning.time}</p>
             <button onClick={() => handleDelete(bokning.id)}>Avboka</button>

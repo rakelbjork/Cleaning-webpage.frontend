@@ -34,7 +34,7 @@ const Navigate = useNavigate();
         let user = await response.json();
         setLoggedInUser(user);
         localStorage.setItem("loggedInUser", JSON.stringify(user))
-        Navigate("mypage");
+        Navigate("/mypage");
 
     }
 

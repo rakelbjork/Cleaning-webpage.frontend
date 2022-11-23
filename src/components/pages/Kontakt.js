@@ -1,5 +1,5 @@
 import React from "react";
-import './kontakt.css';
+import './homepage.css';
 
 const Kontakt = () => {
   return (

@@ -253,3 +253,15 @@ nav div a:not(:first-child) { margin-left: var(--distance-12);}
 .icon-circle { width: 6.2rem; height: 6.2rem; padding: 0rem;}
 .icon-form-control { right: 10px; top: 10px; }
 
+.center {
+  margin-left: auto;
+  margin-right: auto;
+  background-color: rgba(239, 198, 231, 0.3);
+  
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+

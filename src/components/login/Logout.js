@@ -9,8 +9,12 @@ export default class Logout extends Component {
         window.location.href = baseUrl +"login";
     }
     render(){
+        const isLoggedIn = window.localStorage.getItem('token')
+        {isLoggedIn ? <Logout /> : null}
+
         return(
             <Link onClick={this.logout} className="logout">Logout</Link>
+    
         )
     }
 }

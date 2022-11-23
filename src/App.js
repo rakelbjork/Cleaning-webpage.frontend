@@ -8,7 +8,7 @@ import Navbar from '../src/components/frontPage/Navbar';
 import './components/frontPage/navBar/Navbar.css';
 import HomePage from './components/pages/HomePage';
 import MyPage from './components/pages/MyPage';
-import Bokning from './components/booking/Bokning';
+import Bokning from './components/booking/Boka';
 import Bokningar from './components/booking/Bokningar'
 import NoPage from "./components/pages/NoPage";
 import Services from './components/booking/Services';

@@ -41,7 +41,7 @@ if (localStorage.getItem("loggedInUser") == null)
       (()=> {
         switch (condition) {
           case 1: return null;
-          case 2: return <Link to="/logout">Mina sidor</Link>;
+          case 2: return <Link to="/mypage">Mina sidor</Link>;
           default: <div>Debug</div>;
         }
       })()

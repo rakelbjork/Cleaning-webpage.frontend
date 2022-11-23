@@ -3,24 +3,12 @@ import './Booking.css';
 
 const Services = () => {
 
-
-
- 
-
-
     return ( 
     
     <div>   
-      
-      
-      
-      
-      
+
   <div>
       
-      
-
-
  <table className="center">
 		<thead>
 			<tr>

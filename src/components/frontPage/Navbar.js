@@ -25,7 +25,7 @@ if (localStorage.getItem("loggedInUser") == null)
 } else {
   condition = 2;
 }
- 
+
 
     return(
       <>
@@ -55,6 +55,9 @@ if (localStorage.getItem("loggedInUser") == null)
         </li>
         <li>
           <Link to="/kontakt">Kontakta oss</Link>
+        </li>
+        <li>
+          <Link to="/logout">Logga ut</Link>
         </li>
       </ul>
       </div>

@@ -34,6 +34,7 @@ function App() {
           <Route path='bokning' element={<Bokning loggedInUser={loggedInUser}/>} />
           <Route path='Bokningar' element={<Bokningar />} />
           <Route path='services' element={<Services />} />
+          <Route path='logout' element={<Logout loggedInUser={loggedInUser}/>} />
           <Route path="*" element={<NoPage />} />
         </Route>
 

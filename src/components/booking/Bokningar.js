@@ -49,7 +49,7 @@ setBokningar(bookings)
 }
 
 return (
-    <div>
+    <div className="bokning">
     {bokningar.map(
         bokning => <Bokning 
         key={bokning.id} 

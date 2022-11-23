@@ -14,11 +14,3 @@ export default class Logout extends Component {
         )
     }
 }
-
-/*const removeToken = (loggedInUser) => { 
-    localStorage.removeItem("token");
-    setToken(null);
-  }
-  <Button onClick={removeToken}>
-  LogOut
-  </Button>*/

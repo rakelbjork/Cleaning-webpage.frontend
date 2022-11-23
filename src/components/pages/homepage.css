@@ -1,5 +1,5 @@
  body{
-  background-image: url('../assets/bakgrund1.png');
+  background-image: url('../assets/bakgrund1.png') no-repeat;
   background-repeat: no-repeat;
   background-size: flex;
   margin: 0;

@@ -17,6 +17,8 @@ const Navbar = () => {
     var condition = null;
 
 
+
+
 if (localStorage.getItem("loggedInUser") == null)
 {
   condition = 1;
@@ -39,7 +41,7 @@ if (localStorage.getItem("loggedInUser") == null)
       (()=> {
         switch (condition) {
           case 1: return <Link to="/login">Login</Link>;
-          case 2: return null;
+          case 2: return <Link to="/logout">Logga ut</Link>;
           default: <div>Debug</div>;
         }
       })()

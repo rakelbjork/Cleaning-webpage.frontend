@@ -54,7 +54,11 @@ setBokningar(bookings)
 
 return (
     <div>
-    {bokningar.map(bokning => <Bokning key={bokning.id} bokning={bokning} setBokningar={setBokningar} /> )}
+    {bokningar.map(
+        bokning => <Bokning 
+        key={bokning.id} 
+        bokning={bokning} 
+        setBokningar={setBokningar} /> )}
 </div>
 
 )

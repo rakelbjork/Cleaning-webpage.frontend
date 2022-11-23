@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Register from "../register/Register";
 import "../login/Login.css"
 
@@ -9,6 +9,7 @@ const Login = (props) => {
 
 const [username, setUsername] = useState("");
 const [password, setPassword] = useState("");
+const Navigate = useNavigate();
 
 
     const { setLoggedInUser } = (props);
@@ -31,6 +32,7 @@ const [password, setPassword] = useState("");
         response = await fetch(`http://localhost:8080/api/auth/whoami?token=${token}`)
         let user = await response.json();
         setLoggedInUser(user);
+        Navigate("MyPage");
 
     }
 

@@ -11,7 +11,6 @@ useEffect(() => {
    var activeUser = localStorage.getItem("loggedInUser");
    var parsedUser = JSON.parse(activeUser);
    var userToken = parsedUser.token;
-   console.log(userToken)
 
 const fetchBokningar = async () => {
 
@@ -22,7 +21,6 @@ let response = await fetch(`${process.env.REACT_APP_BASE_URL}/api/booking`, {
 }
 });
 let bokningar = await response.json();
-console.log(bokningar)
 
 setBokningar(bokningar)
 }
@@ -45,8 +43,6 @@ let response = await fetch(`${process.env.REACT_APP_BASE_URL}/api/booking`, {
 }
 })
 let bookings = await response.json()
-
-console.log("bokningar", bookings)
 
 setBokningar(bookings)
 

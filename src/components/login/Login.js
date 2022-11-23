@@ -29,7 +29,6 @@ const Navigate = useNavigate();
             }
         })
         let token = await response.text();
-        console.log('token: ', token)
         response = await fetch(`http://localhost:8080/api/auth/whoami?token=${token}`)
         let user = await response.json();
         setLoggedInUser(user);

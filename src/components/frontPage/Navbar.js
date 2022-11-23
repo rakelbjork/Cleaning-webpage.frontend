@@ -37,7 +37,15 @@ if (localStorage.getItem("loggedInUser") == null)
           <Link to="/">Hem</Link>
         </li>
         <li>
-          <Link to="/mypage">Mina Sidor</Link>
+        {
+      (()=> {
+        switch (condition) {
+          case 1: return null;
+          case 2: return <Link to="/logout">Mina sidor</Link>;
+          default: <div>Debug</div>;
+        }
+      })()
+     }
         </li>
         <li>
           <Link to="/bokning">Boka</Link>

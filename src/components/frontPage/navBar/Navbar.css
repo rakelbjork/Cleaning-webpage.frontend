@@ -10,7 +10,7 @@
     align-items: center;
     gap: 1rem;
     padding: 0 1rem;
-    flex-direction: row;
+    flex-direction: row-reverse;
   }
 
   .logo-width { 

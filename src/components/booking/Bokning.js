@@ -53,7 +53,10 @@ const Bokning = (props) => {
     }
 
     return (
-        <div>Lägg till bokning
+        <div className="headerContainer">
+            <div className="headerContainer h1">
+                <h1>Lägg till bokning</h1>
+                </div>
         <form>
             <p>Datum</p>
             <input

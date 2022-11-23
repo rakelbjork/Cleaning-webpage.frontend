@@ -8,6 +8,7 @@ import '../pages/homepage.css';
 import logo from '../assets/städafint1.png';
 import Kontakt from '../pages/Kontakt';
 import Services from '../booking/Services';
+import Logout from '../login/logout';
 
 
 const Navbar = () => {

@@ -1,8 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, Button } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Register from "../register/Register";
 import "../login/Login.css"
-
 
 const Login = (props) => {
     
@@ -48,11 +47,10 @@ const Navigate = useNavigate();
             return user;
         } catch {
 
-            
         }
-        
 
     }
+    
 
     try{
         var loggedIn = localStorage.getItem("loggedInUser")
@@ -60,12 +58,12 @@ const Navigate = useNavigate();
             var activeUser = logInCheck(loggedIn);
         } else{
             return <div>Du är redan inloggad</div>
-
         }
         } catch{
         console.log("Något gick snett med inloggningen! Har du ändrat i LocalStorage manuellt?")
-        
     }
+
+    
     return (
         <div>
             <h2>Login</h2>

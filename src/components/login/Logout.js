@@ -10,11 +10,9 @@ const Logout = () => {
         setTimeout(() => {
             if (localStorage.getItem("loggedInUser") == null)
             {
-                console.log("Flyttar användaren")
                 navigate("/");            
 
             }else {
-                console.log("Raderar localStorage")
                 localStorage.removeItem("loggedInUser")
                 window.location.reload();
 

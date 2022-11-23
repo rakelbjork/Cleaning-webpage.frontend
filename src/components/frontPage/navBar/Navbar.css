@@ -12,6 +12,9 @@
     padding: 0 1rem;
     flex-direction: row;
   }
+  button:hover{
+    cursor: pointer;
+  }
 
   .logo-width { 
     max-width: 100%;

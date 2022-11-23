@@ -1,14 +1,26 @@
 import React, { Component } from 'react'
 import { useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
+import Navbar from '../frontPage/Navbar';
 
 const Logout = () => {
     const navigate = useNavigate();
-    useEffect(() => {
+        useEffect(() => {
+        
         setTimeout(() => {
-            window.localStorage.clear();
-            navigate("/");
+            if (localStorage.getItem("loggedInUser") == null)
+            {
+                console.log("Flyttar användaren")
+                navigate("/");            
+
+            }else {
+                console.log("Raderar localStorage")
+                localStorage.removeItem("loggedInUser")
+                window.location.reload();
+
+            } 
         }, 1000);
+        
       });
     <div>Du loggas nu ut</div>
 }

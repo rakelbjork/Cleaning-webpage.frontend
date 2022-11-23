@@ -34,7 +34,7 @@ const Navigate = useNavigate();
         let user = await response.json();
         setLoggedInUser(user);
         localStorage.setItem("loggedInUser", JSON.stringify(user))
-        Navigate("mypage");
+        Navigate("/mypage");
 
     }
 
@@ -57,7 +57,7 @@ const Navigate = useNavigate();
         if (loggedIn == null){
             var activeUser = logInCheck(loggedIn);
         } else{
-            return <div>Du är redan inloggad</div>
+            return <div className="headerContainer h1">Du är redan inloggad</div>
         }
         } catch{
         console.log("Något gick snett med inloggningen! Har du ändrat i LocalStorage manuellt?")
@@ -65,8 +65,10 @@ const Navigate = useNavigate();
 
     
     return (
-        <div>
-            <h2>Login</h2>
+        <div className="headerContainer">
+            <div className="headerContainer h1">
+                <h1>Login</h1>
+                </div>
             <form>
                 <p>Username</p>
                 <input
@@ -85,7 +87,7 @@ const Navigate = useNavigate();
                 />
                 <br /><br />
                 <button onClick={handleLogin}>Login</button>
-
+                <br /><br />
                 <div className="flexGrow">
                 <Link to="/register">
                 <button>Registrera ny användare</button>

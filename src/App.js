@@ -12,6 +12,7 @@ import Bokning from './components/booking/Bokning';
 import Bokningar from './components/booking/Bokningar'
 import NoPage from "./components/pages/NoPage";
 import Services from './components/booking/Services';
+import Logout from './components/login/Logout';
 
 function App() {
 
@@ -32,6 +33,7 @@ function App() {
           <Route path='bokning' element={<Bokning loggedInUser={loggedInUser}/>} />
           <Route path='Bokningar' element={<Bokningar />} />
           <Route path='services' element={<Services />} />
+          <Route path='logout' element={<Logout loggedInUser={loggedInUser}/>} />
           <Route path="*" element={<NoPage />} />
         </Route>
 

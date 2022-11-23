@@ -15,6 +15,7 @@ return (
       <Link to="/bokningar">
       <button> Bokningar</button>
       </Link>
+  
     </div>
 </div>
 

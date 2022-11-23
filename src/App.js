@@ -12,6 +12,7 @@ import Bokning from './components/booking/Bokning';
 import Bokningar from './components/booking/Bokningar'
 import NoPage from "./components/pages/NoPage";
 import Services from './components/booking/Services';
+import Logout from './components/login/Logout';
 
 function App() {
 
@@ -26,6 +27,7 @@ function App() {
           <Route index element={<HomePage loggedInUser={loggedInUser} setLoggedInUser={setLoggedInUser}/>} />
           <Route path='login' element={<Login setLoggedInUser={setLoggedInUser}/>} />
           <Route path='register' element={<Register />} />
+          <Route path='logout' element={<Logout />} />
           <Route path='mypage' element={<MyPage loggedInUser={loggedInUser}/>} />
           <Route path='kontakt' element={<Kontakt />} />
           <Route path="unauthorized" element={<Unauthorized />} />

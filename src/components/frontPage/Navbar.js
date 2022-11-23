@@ -8,7 +8,6 @@ import '../pages/homepage.css';
 import logo from '../assets/städafint1.png';
 import Kontakt from '../pages/Kontakt';
 import Services from '../booking/Services';
-import Logout from '../login/logout';
 
 
 const Navbar = () => {
@@ -16,6 +15,8 @@ const Navbar = () => {
     const[click, setClick] = useState(false)
     const handleClick = ()  => setClick(!click)
     var condition = null;
+
+
 
 
 if (localStorage.getItem("loggedInUser") == null)
@@ -40,7 +41,7 @@ if (localStorage.getItem("loggedInUser") == null)
       (()=> {
         switch (condition) {
           case 1: return <Link to="/login">Login</Link>;
-          case 2: return null;
+          case 2: return <Link to="/logout">Logga ut</Link>;
           default: <div>Debug</div>;
         }
       })()

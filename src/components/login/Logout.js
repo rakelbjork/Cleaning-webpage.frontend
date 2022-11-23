@@ -1,24 +1,15 @@
 import React, { Component } from 'react'
-import { baseUrl } from '../pages/HomePage';
-import {Link} from 'react-router-dom'
+import { useEffect } from 'react';
+import { useNavigate } from "react-router-dom";
 
-export default class Logout extends Component {
-   
-    logout = () => {
-        window.localStorage.clear();
-        window.location.href = baseUrl +"login";
-    }
-    render(){
-        return(
-            <Link onClick={this.logout} className="logout">Logout</Link>
-        )
-    }
+const Logout = () => {
+    const navigate = useNavigate();
+    useEffect(() => {
+        setTimeout(() => {
+            window.localStorage.clear();
+            navigate("/");
+        }, 1000);
+      });
+    <div>Du loggas nu ut</div>
 }
-
-/*const removeToken = (loggedInUser) => { 
-    localStorage.removeItem("token");
-    setToken(null);
-  }
-  <Button onClick={removeToken}>
-  LogOut
-  </Button>*/
+export default Logout

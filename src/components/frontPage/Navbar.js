@@ -31,10 +31,22 @@ if (localStorage.getItem("loggedInUser") == null)
       <>
               <nav className='navbar'>
             <img src={logo} className="logo" alt="städafint1.png" />
-            <div className='nav-menu'>
+            <div className='navbar .nav-menu'>
       <ul>
         <li>
           <Link to="/">Hem</Link>
+        </li>
+        <li>
+          <Link to="/mypage">Mina Sidor</Link>
+        </li>
+        <li>
+          <Link to="/bokning">Boka</Link>
+        </li>
+        <li>
+          <Link to="/services">Våra tjänster</Link>
+        </li>
+        <li>
+          <Link to="/kontakt">Kontakta oss</Link>
         </li>
         <li>
         {
@@ -46,15 +58,6 @@ if (localStorage.getItem("loggedInUser") == null)
         }
       })()
      }
-        </li>
-        <li>
-          <Link to="/bokning">Boka</Link>
-        </li>
-        <li>
-          <Link to="/services">Våra tjänster</Link>
-        </li>
-        <li>
-          <Link to="/kontakt">Kontakta oss</Link>
         </li>
       </ul>
       </div>

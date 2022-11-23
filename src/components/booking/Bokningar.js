@@ -62,7 +62,7 @@ checked={bokning.done}
 onChange={() => console.log("To be implemented...")}
 />
 </p>
-<button onClick={() => handleDelete(todo.id)}>Ta bort bokning</button>
+<button onClick={() => handleDelete(bokning.id)}>Ta bort bokning</button>
 </div>
 )
 )

@@ -60,7 +60,6 @@
 .navbar .nav-menu {
     display: flex;
     align-items: center;
-    float: left;
 }
 
 .navbar .nav > li > a {
@@ -80,7 +79,7 @@
     .navbar .nav-menu {
         position: absolute;
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         align-items: center;
         top: 90px;
         right: -100%;

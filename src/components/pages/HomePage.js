@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import "../pages/homepage.css";
 import { Link } from 'react-router-dom';
-import './homepage.css';
 
 const HomePage = () => {
 
@@ -17,6 +16,8 @@ const HomePage = () => {
         </div>
       );
    
-};
+}
+
+export default HomePage
 
 export default HomePage;

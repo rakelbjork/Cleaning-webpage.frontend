@@ -10,7 +10,7 @@ return (
 
     <div className="home">
       <div className="headerContainer">
-      <h1> Mina Sidor</h1>
+      <h1> Välkommen till Mina Sidor!</h1>
       <p> För att boka eller avboka klicka nedan:</p>
       <Link to="/bokningar">
       <button> Bokningar</button>
